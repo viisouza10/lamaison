@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/links", "destination": "/Links.dc.html" }
+    { "source": "/links", "destination": "/Links.dc.html" },
+    { "source": "/cardapio", "destination": "/Cardapio.dc.html" }
   ]
 }
