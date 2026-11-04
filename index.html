@@ -20,6 +20,15 @@ html{overflow-x:clip !important}
 a{color:#e9c98f;text-decoration:none}
 .lm5-tap-hint{display:none}
 @media (max-width:680px){.lm5-scroll-hint{display:none}.lm5-tap-hint{display:inline}}
+.lm5-nav-links{display:flex}
+.lm5-nav-toggle{display:none}
+@media (max-width:760px){
+  .lm5-nav-brand{font-size:20px !important}
+  .lm5-nav-toggle{display:flex;align-items:center;justify-content:center}
+  .lm5-nav-links{display:none}
+  .lm5-nav-links.lm5-nav-open{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:#1d1b18;padding:6px 6vw 18px;mix-blend-mode:normal;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+  .lm5-nav-links.lm5-nav-open a{width:100%;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+}
 a:hover{color:#ffffff}
 ::selection{background:#e9c98f;color:#232321}
 </style>
@@ -33,15 +42,16 @@ a:hover{color:#ffffff}
   </svg>
 
   <nav style="position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 5vw;mix-blend-mode:difference;color:#ffffff">
-    <a href="#casa" style="font-family:'Covered By Your Grace',cursive;font-size:26px;color:#ffffff">La Maison de La Bière</a>
-    <div style="display:flex;align-items:center;gap:30px;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase">
-      <a href="#sobre" style="color:#ffffff">A casa</a>
-      <a href="#carta" style="color:#ffffff">Menu</a>
-      <a href="#unidades" style="color:#ffffff">Unidades</a>
-      <a href="#eventos" style="color:#ffffff">Eventos</a>
-      <a href="#visite" style="color:#ffffff">Visite</a>
+    <a href="#casa" class="lm5-nav-brand" style="font-family:'Covered By Your Grace',cursive;font-size:26px;color:#ffffff;white-space:nowrap">La Maison de La Bière</a>
+    <div class="lm5-nav-links {{ navOpenClass }}" style="align-items:center;gap:30px;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase">
+      <a href="#sobre" onClick="{{ closeNav }}" style="color:#ffffff">A casa</a>
+      <a href="#carta" onClick="{{ closeNav }}" style="color:#ffffff">Menu</a>
+      <a href="#unidades" onClick="{{ closeNav }}" style="color:#ffffff">Unidades</a>
+      <a href="#eventos" onClick="{{ closeNav }}" style="color:#ffffff">Eventos</a>
+      <a href="#visite" onClick="{{ closeNav }}" style="color:#ffffff">Visite</a>
       <a href="Cardapio.dc.html" style="color:#ffffff">Cardápio online</a>
     </div>
+    <button class="lm5-nav-toggle" onClick="{{ toggleNav }}" aria-label="Menu" style="background:transparent;border:1.5px solid #fff;border-radius:3px;width:38px;height:34px;color:#fff;cursor:pointer;font-size:15px;line-height:1;flex-shrink:0">{{ navIcon }}</button>
   </nav>
 
   <!-- 01 HERO / LOUSA -->
@@ -219,13 +229,13 @@ a:hover{color:#ffffff}
           <span>© 2026 La Maison de La Bière</span><span>São Roque · SP</span>
         </div>
       </div>
-      <div data-g="rip-l" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:10px 0 30px rgba(0,0,0,.25);will-change:transform">
+      <div data-g="rip-l" onClick="{{ tapOpenRip }}" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:10px 0 30px rgba(0,0,0,.25);will-change:transform;cursor:pointer">
         <div style="width:100vw;flex-shrink:0">
           <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(64px,10vw,170px);line-height:.95">Vem pro<br>La Maison!</div>
           <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e"><span class="lm5-scroll-hint">Role para abrir</span><span class="lm5-tap-hint">Toque para abrir</span></div>
         </div>
       </div>
-      <div data-g="rip-r" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:-10px 0 30px rgba(0,0,0,.25);will-change:transform">
+      <div data-g="rip-r" onClick="{{ tapOpenRip }}" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:-10px 0 30px rgba(0,0,0,.25);will-change:transform;cursor:pointer">
         <div style="width:100vw;flex-shrink:0">
           <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(64px,10vw,170px);line-height:.95">Vem pro<br>La Maison!</div>
           <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e"><span class="lm5-scroll-hint">Role para abrir</span><span class="lm5-tap-hint">Toque para abrir</span></div>
@@ -274,7 +284,7 @@ class Component extends DCLogic {
   rootRef = React.createRef();
   lbStageRef = React.createRef();
   lbImgRef = React.createRef();
-  state = { lightbox: null };
+  state = { lightbox: null, navOpen: false };
 
   componentDidMount() { this.wait(); this._onKey = (e) => this.onKey(e); window.addEventListener('keydown', this._onKey); }
   componentWillUnmount() {
@@ -297,10 +307,21 @@ class Component extends DCLogic {
     this._lbKey = key;
   }
   onKey(e) {
+    if (e.key === 'Escape' && this.state.navOpen) { this.closeNav(); return; }
     if (!this.state.lightbox) return;
     if (e.key === 'Escape') this.closeLb();
     if (e.key === 'ArrowRight') this.stepLb(1);
     if (e.key === 'ArrowLeft') this.stepLb(-1);
+  }
+  toggleNav() { this.setState(s => ({ navOpen: !s.navOpen })); }
+  closeNav() { this.setState({ navOpen: false }); }
+  tapOpenRip() {
+    const root = this.rootRef.current;
+    const wrap = root && root.querySelector('[data-g=rip-wrap]');
+    if (!wrap) return;
+    const rect = wrap.getBoundingClientRect();
+    const target = window.scrollY + rect.top + rect.height - window.innerHeight;
+    window.scrollTo({ top: target, behavior: 'smooth' });
   }
   wait() {
     if (window.gsap && window.ScrollTrigger && this.rootRef.current) this.t = setTimeout(() => this.boot(), 60);
@@ -491,7 +512,12 @@ class Component extends DCLogic {
       lbPrevBtn: (e) => { e.stopPropagation(); this.stepLb(-1); },
       lbNextBtn: (e) => { e.stopPropagation(); this.stepLb(1); },
       lbShowGridBtn: (e) => { e.stopPropagation(); this.showGridLb(); },
-      lbStop: (e) => e.stopPropagation()
+      lbStop: (e) => e.stopPropagation(),
+      navOpenClass: this.state.navOpen ? 'lm5-nav-open' : '',
+      navIcon: this.state.navOpen ? '✕' : '☰',
+      toggleNav: () => this.toggleNav(),
+      closeNav: () => this.closeNav(),
+      tapOpenRip: () => this.tapOpenRip()
     };
   }
 }
