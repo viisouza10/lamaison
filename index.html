@@ -18,6 +18,8 @@ html,body{margin:0;padding:0;background:#232321;color:#e9e6df;-webkit-font-smoot
 html{overflow-x:clip !important}
 *{box-sizing:border-box}
 a{color:#e9c98f;text-decoration:none}
+.lm5-tap-hint{display:none}
+@media (max-width:680px){.lm5-scroll-hint{display:none}.lm5-tap-hint{display:inline}}
 a:hover{color:#ffffff}
 ::selection{background:#e9c98f;color:#232321}
 </style>
@@ -34,7 +36,7 @@ a:hover{color:#ffffff}
     <a href="#casa" style="font-family:'Covered By Your Grace',cursive;font-size:26px;color:#ffffff">La Maison de La Bière</a>
     <div style="display:flex;align-items:center;gap:30px;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase">
       <a href="#sobre" style="color:#ffffff">A casa</a>
-      <a href="#carta" style="color:#ffffff">A carta</a>
+      <a href="#carta" style="color:#ffffff">Menu</a>
       <a href="#unidades" style="color:#ffffff">Unidades</a>
       <a href="#eventos" style="color:#ffffff">Eventos</a>
       <a href="#visite" style="color:#ffffff">Visite</a>
@@ -55,13 +57,13 @@ a:hover{color:#ffffff}
       <div data-g="strip" data-torn="strip" style="display:inline-block;margin:3vh 0 0 -8px;padding:10px 26px 8px;background:#f4f1ea;color:#1d1b18;font-family:'Covered By Your Grace',cursive;font-size:clamp(22px,2.2vw,30px);transform:rotate(-2deg);transform-origin:0 50%">"A Casa da Cerveja" · Bar de Cervejas e Chopp especiais</div>
       <p data-g="hero-fade" style="margin:4vh 0 0;max-width:420px;font-size:16px;line-height:1.7;color:#cfcbc2">Desde maio de 2014 no centro de São Roque. Terceira Temporada, terceira casa sede.</p>
       <div data-g="hero-fade" style="display:flex;align-items:flex-start;gap:14px;margin-top:4vh">
-        <a href="#carta" style="padding:14px 26px;border:1.5px solid #ece9e2;border-radius:3px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#ece9e2" style-hover="background:#ece9e2;color:#252523">Ver a carta</a>
+        <a href="#carta" style="padding:14px 26px;border:1.5px solid #ece9e2;border-radius:3px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#ece9e2" style-hover="background:#ece9e2;color:#252523">Ver o menu</a>
         <svg viewBox="0 0 90 120" style="width:62px;height:auto;margin-top:18px;overflow:visible;filter:url(#lm5-chalk)"><path data-arrow="" d="M6 8 C 40 0, 64 22, 48 44 C 34 62, 18 46, 34 36 C 56 24, 70 60, 62 108" fill="none" stroke="#ece9e2" stroke-width="2" stroke-linecap="round"></path><path data-arrow="" d="M50 96 L62 110 L72 94" fill="none" stroke="#ece9e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </div>
     </div>
     <div style="position:relative;z-index:2;display:flex;justify-content:center;padding:6vh 0">
       <div data-g="hero-photo" style="position:relative;width:min(100%,520px);background:#f4f1ea;padding:12px 12px 52px;box-shadow:0 30px 60px rgba(0,0,0,.5);transform:rotate(3deg)">
-        <div style="position:relative;aspect-ratio:4/3;background:url(./assets/og.jpg) 50% 60%/cover no-repeat"></div>
+        <div style="position:relative;aspect-ratio:4/3;background:url(./assets/hero-torneiras.jpg) 50% 35%/cover no-repeat"></div>
         <div style="position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:'Covered By Your Grace',cursive;font-size:24px;color:#1d1b18">nossas torneiras</div>
         <div style="position:absolute;top:-14px;left:-18px;width:96px;height:30px;background:rgba(232,224,204,.75);transform:rotate(-32deg)"></div>
         <div style="position:absolute;top:-12px;right:-20px;width:96px;height:30px;background:rgba(232,224,204,.75);transform:rotate(30deg)"></div>
@@ -103,7 +105,7 @@ a:hover{color:#ffffff}
     <div style="position:sticky;top:0;height:100vh;overflow:hidden;background-color:#252523;background-image:radial-gradient(50% 45% at 70% 40%,rgba(255,255,255,.06),rgba(255,255,255,0) 70%),radial-gradient(40% 40% at 15% 80%,rgba(255,255,255,.04),rgba(255,255,255,0) 70%);display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:4vw;align-items:center;padding:90px 6vw 50px">
       <div style="position:absolute;inset:0;opacity:.16;pointer-events:none;mix-blend-mode:screen;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
       <div style="position:relative;z-index:2">
-        <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(44px,4.6vw,72px);line-height:1;filter:url(#lm5-chalk)">A Carta</div>
+        <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(44px,4.6vw,72px);line-height:1;filter:url(#lm5-chalk)">Menu</div>
         <div style="margin:10px 0 4vh;font-size:13px;line-height:1.6;color:#b5b1a8;max-width:260px">O cardápio de comida está disponível somente na unidade do Centro.</div>
         <div style="display:flex;flex-direction:column;gap:2px">
           <sc-for list="{{ menu }}" as="m" hint-placeholder-count="7">
@@ -220,30 +222,50 @@ a:hover{color:#ffffff}
       <div data-g="rip-l" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:10px 0 30px rgba(0,0,0,.25);will-change:transform">
         <div style="width:100vw;flex-shrink:0">
           <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(64px,10vw,170px);line-height:.95">Vem pro<br>La Maison!</div>
-          <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e">Role para abrir</div>
+          <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e"><span class="lm5-scroll-hint">Role para abrir</span><span class="lm5-tap-hint">Toque para abrir</span></div>
         </div>
       </div>
       <div data-g="rip-r" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:-10px 0 30px rgba(0,0,0,.25);will-change:transform">
         <div style="width:100vw;flex-shrink:0">
           <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(64px,10vw,170px);line-height:.95">Vem pro<br>La Maison!</div>
-          <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e">Role para abrir</div>
+          <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e"><span class="lm5-scroll-hint">Role para abrir</span><span class="lm5-tap-hint">Toque para abrir</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- LIGHTBOX de eventos -->
-  <div ref="{{ lbStageRef }}" style="display:{{ lbDisplay }};position:fixed;inset:0;z-index:300;align-items:center;justify-content:center;background:rgba(10,9,8,.92)" onClick="{{ lbClose }}">
-    <button onClick="{{ lbCloseBtn }}" aria-label="Fechar" style="position:absolute;top:22px;right:24px;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:18px;cursor:pointer">✕</button>
-    <sc-if value="{{ lbShowArrows }}" hint-placeholder-val="{{ false }}">
-      <button onClick="{{ lbPrevBtn }}" aria-label="Anterior" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">‹</button>
-      <button onClick="{{ lbNextBtn }}" aria-label="Próxima" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">›</button>
+  <div ref="{{ lbStageRef }}" style="display:{{ lbDisplay }};position:fixed;inset:0;z-index:300;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,9,8,.92)" onClick="{{ lbClose }}">
+    <button onClick="{{ lbCloseBtn }}" aria-label="Fechar" style="position:absolute;top:22px;right:24px;z-index:2;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:18px;cursor:pointer">✕</button>
+
+    <sc-if value="{{ lbSingleMode }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ lbShowArrows }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ lbPrevBtn }}" aria-label="Anterior" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">‹</button>
+        <button onClick="{{ lbNextBtn }}" aria-label="Próxima" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">›</button>
+      </sc-if>
+      <div onClick="{{ lbStop }}" ref="{{ lbImgRef }}" style="position:relative;width:min(88vw,900px);max-height:76vh;aspect-ratio:4/3;box-shadow:0 30px 70px rgba(0,0,0,.6)">
+        <image-slot id="lm5-lb-img" shape="rect" src="{{ lbPhoto }}" placeholder="Foto"></image-slot>
+      </div>
+      <div style="position:relative;margin-top:24px;text-align:center;color:#ece9e2;font-family:'Covered By Your Grace',cursive;font-size:24px">{{ lbCaption }}</div>
+      <sc-if value="{{ lbShowAllBtn }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ lbShowGridBtn }}" style="position:relative;margin-top:10px;background:transparent;border:none;cursor:pointer;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f">Ver álbum completo →</button>
+      </sc-if>
     </sc-if>
-    <div onClick="{{ lbStop }}" ref="{{ lbImgRef }}" style="position:relative;width:min(88vw,900px);max-height:76vh;aspect-ratio:4/3;box-shadow:0 30px 70px rgba(0,0,0,.6)">
-      <image-slot id="lm5-lb-img" shape="rect" src="{{ lbPhoto }}" placeholder="Foto"></image-slot>
-    </div>
-    <div style="position:absolute;bottom:64px;left:0;right:0;text-align:center;color:#ece9e2;font-family:'Covered By Your Grace',cursive;font-size:24px">{{ lbCaption }}</div>
-    <a href="{{ lbAlbumHref }}" target="_blank" onClick="{{ lbStop }}" style="position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f">Ver álbum completo →</a>
+
+    <sc-if value="{{ lbGridMode }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ lbStop }}" style="position:relative;width:min(92vw,1000px);max-height:82vh;display:flex;flex-direction:column">
+        <div style="flex-shrink:0;text-align:center;color:#ece9e2;font-family:'Covered By Your Grace',cursive;font-size:30px;padding:0 40px 18px">{{ lbGridTitle }}</div>
+        <div style="overflow-y:auto;padding:4px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px">
+            <sc-for list="{{ lbGridPhotos }}" as="p" hint-placeholder-count="8">
+              <div onClick="{{ p.open }}" style="cursor:pointer;position:relative;aspect-ratio:1;overflow:hidden;border-radius:4px;border:1.5px solid rgba(236,233,226,.15)">
+                <image-slot id="{{ p.id }}" shape="rect" src="{{ p.src }}" placeholder="Foto"></image-slot>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-if>
   </div>
 </div>
 </x-dc>
@@ -404,7 +426,7 @@ class Component extends DCLogic {
     if (document.fonts) document.fonts.ready.then(() => ST.refresh());
   }
 
-  openLb(evIdx) { this._lbDir = 1; this.setState({ lightbox: { evIdx, i: 0 } }); }
+  openLb(evIdx) { this._lbDir = 1; this.setState({ lightbox: { evIdx, i: 0, mode: 'single' } }); }
   closeLb() {
     if (window.gsap && this.lbImgRef.current) {
       window.gsap.to(this.lbImgRef.current, { opacity: 0, y: 20, duration: .22, ease: 'power2.in', onComplete: () => this.setState({ lightbox: null }) });
@@ -415,8 +437,13 @@ class Component extends DCLogic {
     const ev = this.eventsData()[lb.evIdx]; if (!ev || !ev.photos.length) return;
     this._lbDir = d;
     const i = (lb.i + d + ev.photos.length) % ev.photos.length;
-    this.setState({ lightbox: { evIdx: lb.evIdx, i } });
+    this.setState({ lightbox: { evIdx: lb.evIdx, i, mode: 'single' } });
   }
+  showGridLb() {
+    const lb = this.state.lightbox; if (!lb) return;
+    this.setState({ lightbox: { ...lb, mode: 'grid' } });
+  }
+  openGridPhoto(evIdx, i) { this._lbDir = 1; this.setState({ lightbox: { evIdx, i, mode: 'single' } }); }
   eventsData() {
     return [
       { tag: '6ª edição', name: 'Beer Mile Brasil · São Roque', href: 'https://drive.google.com/drive/folders/19NOqYPm0ZfSVTRnxxJWgOeikvD9QGIRm', id: 'lm5-ev-1', src: './assets/linktree-thumb-beer-mile.jpg', photo: 'Foto: Beer Mile 6ª edição', rot: '-2', mt: '0px',
@@ -429,7 +456,7 @@ class Component extends DCLogic {
   }
   renderVals() {
     const names = ['Burguers', 'Carnes Nobres', 'Porções', 'Pratos', 'Saladas', 'Sobremesas', 'Nas Torneiras'];
-    const photos = ['./assets/prato-houblon-burguer.jpg', './assets/prato-picanha.jpg', './assets/prato-tabua-mista.jpg', './assets/prato-risoto-la-maison.jpg', './assets/prato-salada-la-maison.jpg', './assets/prato-petit-gateau.jpg', './assets/prato-1-pilsen.jpg'];
+    const photos = ['./assets/prato-houblon-burguer.jpg', './assets/prato-picanha.jpg', './assets/prato-tabua-mista.jpg', './assets/prato-risoto-la-maison.jpg', './assets/prato-salada-la-maison.jpg', './assets/prato-petit-gateau.jpg', './assets/prato-11-imperial-stout-com-cafe-cacau-maple-baunilha.jpg'];
     const evs = this.eventsData();
     const lb = this.state.lightbox;
     const activeEv = lb ? evs[lb.evIdx] : null;
@@ -437,7 +464,7 @@ class Component extends DCLogic {
       rootRef: this.rootRef,
       about: [
         { pre: 'Inaugurado em maio de 2014, o La Maison de la Bière é um ', hl: 'Bar de Cervejas e Chopp especiais', post: '.', col: '1', dir: 'row', id: 'lm5-ab-1', photo: 'Foto: fachada', src: './assets/unidade-bar-centro.jpg' },
-        { pre: 'Um conceito único, onde procuramos proporcionar aos nossos amigos e clientes uma experiência sempre ', hl: 'agradável e descontraída', post: ' com a gente.', col: '2', dir: 'row-reverse', id: 'lm5-ab-2', photo: 'Foto: brinde', src: null },
+        { pre: 'Um conceito único, onde procuramos proporcionar aos nossos amigos e clientes uma experiência sempre ', hl: 'agradável e descontraída', post: ' com a gente.', col: '2', dir: 'row-reverse', id: 'lm5-ab-2', photo: 'Foto: ambiente', src: './assets/conceito-ambiente.jpg' },
         { pre: 'Temos também nossas unidades em formatos de ', hl: 'Quiosques e Beer Container', post: ', pois assim levamos nosso Chopp e Cerveja para vários lugares.', col: '1', dir: 'row', id: 'lm5-ab-3', photo: 'Foto: quiosque', src: './assets/quiosque.jpg' },
         { pre: 'Nosso Bar principal aqui no centro da cidade de São Roque chega a ', hl: 'Terceira Temporada', post: ', nossa terceira casa sede, e estamos com muitas novidades, espaço novos, e claro muita Cerveja, Chopp e Comida Boa.', col: '2', dir: 'row-reverse', id: 'lm5-ab-4', photo: 'Foto: salão', src: './assets/salao-interno.jpg' }
       ],
@@ -451,14 +478,19 @@ class Component extends DCLogic {
       lbStageRef: this.lbStageRef,
       lbImgRef: this.lbImgRef,
       lbDisplay: lb ? 'flex' : 'none',
+      lbSingleMode: !!lb && lb.mode !== 'grid',
+      lbGridMode: !!lb && lb.mode === 'grid',
       lbPhoto: activeEv ? activeEv.photos[lb.i] : '',
       lbCaption: activeEv ? activeEv.name + ' · ' + (lb.i + 1) + '/' + activeEv.photos.length : '',
-      lbAlbumHref: activeEv ? activeEv.href : '#',
       lbShowArrows: activeEv ? activeEv.photos.length > 1 : false,
+      lbShowAllBtn: activeEv ? activeEv.photos.length > 1 : false,
+      lbGridTitle: activeEv ? activeEv.name : '',
+      lbGridPhotos: activeEv && lb ? activeEv.photos.map((src, i) => ({ id: 'lm5-lb-grid-' + lb.evIdx + '-' + i, src, open: (e) => { e.stopPropagation(); this.openGridPhoto(lb.evIdx, i); } })) : [],
       lbClose: () => this.closeLb(),
       lbCloseBtn: (e) => { e.stopPropagation(); this.closeLb(); },
       lbPrevBtn: (e) => { e.stopPropagation(); this.stepLb(-1); },
       lbNextBtn: (e) => { e.stopPropagation(); this.stepLb(1); },
+      lbShowGridBtn: (e) => { e.stopPropagation(); this.showGridLb(); },
       lbStop: (e) => e.stopPropagation()
     };
   }

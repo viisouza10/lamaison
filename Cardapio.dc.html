@@ -16,6 +16,19 @@ html,body{margin:0;background:#f4f1ea;-webkit-font-smoothing:antialiased}
 a{color:#8a3a2a;text-decoration:none}
 a:hover{color:#1d1b18}
 button{font-family:inherit}
+.lm-cd-topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lm-cd-item-row{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(29,27,24,.12);cursor:pointer}
+.lm-cd-item-thumb{position:relative;width:92px;height:92px;border-radius:4px;overflow:hidden}
+.lm-cd-sheet-photo{position:relative;height:240px}
+.lm-cd-chip{padding:8px 16px;font-size:12px}
+@media (max-width:560px){
+  .lm-cd-topbar{justify-content:flex-start;flex-wrap:wrap;row-gap:6px}
+  .lm-cd-horario{text-align:left}
+  .lm-cd-item-row{grid-template-columns:minmax(0,1fr) 72px;gap:12px}
+  .lm-cd-item-thumb{width:72px;height:72px}
+  .lm-cd-sheet-photo{height:180px}
+  .lm-cd-chip{padding:7px 13px;font-size:11px}
+}
 </style>
 </helmet>
 <div style="min-height:100vh;background:#f4f1ea;color:#1d1b18;font-family:'Jost',sans-serif;font-weight:300">
@@ -24,9 +37,9 @@ button{font-family:inherit}
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(37,37,35,.55),rgba(37,37,35,.92))"></div>
     <div style="position:relative;max-width:760px;margin:0 auto">
       <img src="https://dg-media.com.br/avatars/avatar_702047.png?v=1733867998" alt="La Maison de La Bière" style="width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;margin-bottom:18px;border:3px solid #f4f1ea"></img>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <div class="lm-cd-topbar">
         <a href="index.html" style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b5b1a8">← Site</a>
-        <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e9c98f;text-align:right">Ter–Sex 17h–23h · Sáb 14h–23h · Dom 12h–18h · Seg fechado</span>
+        <span class="lm-cd-horario" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e9c98f;text-align:right">Ter–Sex 17h–23h · Sáb 14h–23h · Dom 12h–18h · Seg fechado</span>
       </div>
       <div style="margin-top:28px;font-family:'Covered By Your Grace',cursive;font-size:clamp(44px,9vw,76px);line-height:1">La Maison de La Bière</div>
       <div style="display:inline-block;margin-top:10px;padding:6px 18px 4px;background:#f4f1ea;color:#1d1b18;font-family:'Covered By Your Grace',cursive;font-size:22px;transform:rotate(-1.5deg)">Cardápio</div>
@@ -44,7 +57,7 @@ button{font-family:inherit}
       <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Buscar no cardápio" style="width:100%;padding:12px 16px;border:1.5px solid rgba(29,27,24,.25);border-radius:4px;background:#fffdf8;font-family:'Jost',sans-serif;font-size:15px;color:#1d1b18;outline:none"></input>
       <div style="display:flex;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none">
         <sc-for list="{{ chips }}" as="c" hint-placeholder-count="12">
-          <button onClick="{{ c.go }}" style="flex-shrink:0;cursor:pointer;padding:8px 16px;border-radius:999px;border:1.5px solid #1d1b18;font-size:12px;letter-spacing:.08em;background:{{ c.bg }};color:{{ c.fg }}">{{ c.name }}</button>
+          <button onClick="{{ c.go }}" class="lm-cd-chip" style="flex-shrink:0;cursor:pointer;border-radius:999px;border:1.5px solid #1d1b18;letter-spacing:.08em;background:{{ c.bg }};color:{{ c.fg }}">{{ c.name }}</button>
         </sc-for>
       </div>
     </div>
@@ -59,7 +72,7 @@ button{font-family:inherit}
         </div>
         <div style="display:flex;flex-direction:column">
           <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="2">
-            <div onClick="{{ it.open }}" style="display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(29,27,24,.12);cursor:pointer" style-hover="background:rgba(233,201,143,.12)">
+            <div onClick="{{ it.open }}" class="lm-cd-item-row" style-hover="background:rgba(233,201,143,.12)">
               <div>
                 <div style="font-size:17px;font-weight:500">{{ it.name }}</div>
                 <div style="margin-top:4px;font-size:14px;line-height:1.5;color:#5b564e">{{ it.desc }}</div>
@@ -72,7 +85,7 @@ button{font-family:inherit}
                   <sc-if value="{{ it.semLactose }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:rgba(138,58,42,.12);color:#8a3a2a;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Sem lactose</span></sc-if>
                 </div>
               </div>
-              <sc-if value="{{ it.photo }}" hint-placeholder-val="{{ false }}"><div style="position:relative;width:92px;height:92px;border-radius:4px;overflow:hidden"><image-slot id="{{ it.slot }}" shape="rect" src="{{ it.photo }}" placeholder="Foto"></image-slot></div></sc-if>
+              <sc-if value="{{ it.photo }}" hint-placeholder-val="{{ false }}"><div class="lm-cd-item-thumb"><image-slot id="{{ it.slot }}" shape="rect" src="{{ it.photo }}" placeholder="Foto"></image-slot></div></sc-if>
             </div>
           </sc-for>
         </div>
@@ -96,7 +109,7 @@ button{font-family:inherit}
   <sc-if value="{{ sheet }}" hint-placeholder-val="{{ false }}">
     <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:40;background:rgba(20,18,16,.55);display:flex;align-items:flex-end;justify-content:center">
       <div onClick="{{ stop }}" style="width:100%;max-width:560px;background:#f4f1ea;border-radius:14px 14px 0 0;overflow:hidden;animation:none">
-        <sc-if value="{{ sheet.photo }}" hint-placeholder-val="{{ false }}"><div style="position:relative;height:240px"><image-slot id="{{ sheet.slot }}" shape="rect" src="{{ sheet.photo }}" placeholder="Foto do prato"></image-slot></div></sc-if>
+        <sc-if value="{{ sheet.photo }}" hint-placeholder-val="{{ false }}"><div class="lm-cd-sheet-photo"><image-slot id="{{ sheet.slot }}" shape="rect" src="{{ sheet.photo }}" placeholder="Foto do prato"></image-slot></div></sc-if>
         <div style="padding:22px 24px 26px">
           <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a3a2a">{{ sheet.cat }}</div>
           <div style="margin-top:6px;font-family:'Covered By Your Grace',cursive;font-size:36px;line-height:1">{{ sheet.name }}</div>
