@@ -26,7 +26,8 @@ a{color:#e9c98f;text-decoration:none}
   .lm5-nav-brand{font-size:20px !important}
   .lm5-nav-toggle{display:flex;align-items:center;justify-content:center}
   .lm5-nav-links{display:none}
-  .lm5-nav-links.lm5-nav-open{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:#1d1b18;padding:6px 6vw 18px;mix-blend-mode:normal;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+  .lm5-nav-links.lm5-nav-open{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:#1d1b18;padding:6px 6vw 18px;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+  nav.lm5-nav-open{mix-blend-mode:normal !important;background:#1d1b18}
   .lm5-nav-links.lm5-nav-open a{width:100%;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}
 }
 a:hover{color:#ffffff}
@@ -41,7 +42,7 @@ a:hover{color:#ffffff}
     </defs>
   </svg>
 
-  <nav style="position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 5vw;mix-blend-mode:difference;color:#ffffff">
+  <nav class="lm5-nav {{ navOpenClass }}" style="position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 5vw;mix-blend-mode:difference;color:#ffffff">
     <a href="#casa" class="lm5-nav-brand" style="font-family:'Covered By Your Grace',cursive;font-size:26px;color:#ffffff;white-space:nowrap">La Maison de La Bière</a>
     <div class="lm5-nav-links {{ navOpenClass }}" style="align-items:center;gap:30px;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase">
       <a href="#sobre" onClick="{{ closeNav }}" style="color:#ffffff">A casa</a>
