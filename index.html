@@ -43,6 +43,9 @@ a{color:#e9c98f;text-decoration:none}
   .lm5-nav-links.lm5-nav-open{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:#1d1b18;padding:6px 6vw 18px;box-shadow:0 14px 30px rgba(0,0,0,.4)}
   nav.lm5-nav-open{mix-blend-mode:normal !important;background:#1d1b18}
   .lm5-nav-links.lm5-nav-open a{width:100%;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  [data-g="about"]{grid-template-columns:1fr !important}
+  [data-g="about"] > div{grid-column:1 !important;flex-direction:column !important;align-items:flex-start !important;gap:16px !important}
+  [data-g="about"] p{max-width:none !important}
 }
 a:hover{color:#ffffff}
 ::selection{background:#e9c98f;color:#232321}
@@ -268,7 +271,7 @@ a:hover{color:#ffffff}
         <button onClick="{{ lbPrevBtn }}" aria-label="Anterior" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">‹</button>
         <button onClick="{{ lbNextBtn }}" aria-label="Próxima" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">›</button>
       </sc-if>
-      <div onClick="{{ lbStop }}" ref="{{ lbImgRef }}" style="position:relative;width:min(88vw,900px);max-height:76vh;aspect-ratio:4/3;box-shadow:0 30px 70px rgba(0,0,0,.6)">
+      <div onClick="{{ lbStop }}" onTouchStart="{{ lbTouchStart }}" onTouchEnd="{{ lbTouchEnd }}" ref="{{ lbImgRef }}" style="position:relative;width:min(88vw,900px);max-height:76vh;aspect-ratio:4/3;box-shadow:0 30px 70px rgba(0,0,0,.6);touch-action:pan-y">
         <image-slot id="lm5-lb-img" shape="rect" src="{{ lbPhoto }}" placeholder="Foto"></image-slot>
       </div>
       <div style="position:relative;margin-top:24px;text-align:center;color:#ece9e2;font-family:'Covered By Your Grace',cursive;font-size:24px">{{ lbCaption }}</div>
@@ -337,6 +340,18 @@ class Component extends DCLogic {
     const rect = wrap.getBoundingClientRect();
     const target = window.scrollY + rect.top + rect.height - window.innerHeight;
     window.scrollTo({ top: target, behavior: 'smooth' });
+  }
+  lbTouchStart(e) {
+    const t = e.touches && e.touches[0];
+    this._touchX = t ? t.clientX : null;
+  }
+  lbTouchEnd(e) {
+    if (this._touchX == null) return;
+    const t = e.changedTouches && e.changedTouches[0];
+    const endX = t ? t.clientX : this._touchX;
+    const dx = endX - this._touchX;
+    this._touchX = null;
+    if (Math.abs(dx) > 40) this.stepLb(dx < 0 ? 1 : -1);
   }
   wait() {
     if (window.gsap && window.ScrollTrigger && this.rootRef.current) this.t = setTimeout(() => this.boot(), 60);
@@ -528,6 +543,8 @@ class Component extends DCLogic {
       lbNextBtn: (e) => { e.stopPropagation(); this.stepLb(1); },
       lbShowGridBtn: (e) => { e.stopPropagation(); this.showGridLb(); },
       lbStop: (e) => e.stopPropagation(),
+      lbTouchStart: (e) => this.lbTouchStart(e),
+      lbTouchEnd: (e) => this.lbTouchEnd(e),
       navOpenClass: this.state.navOpen ? 'lm5-nav-open' : '',
       navIcon: this.state.navOpen ? '✕' : '☰',
       toggleNav: () => this.toggleNav(),

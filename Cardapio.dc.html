@@ -31,15 +31,16 @@ a{color:#8a3a2a;text-decoration:none}
 a:hover{color:#1d1b18}
 button{font-family:inherit}
 .lm-cd-topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.lm-cd-item-row{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(29,27,24,.12);cursor:pointer}
-.lm-cd-item-thumb{position:relative;width:92px;height:92px;border-radius:4px;overflow:hidden}
+.lm-cd-item-row{display:grid;grid-template-columns:minmax(0,1fr) 92px;grid-template-areas:"text thumb";gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(29,27,24,.12);cursor:pointer}
+.lm-cd-item-text{grid-area:text}
+.lm-cd-item-thumb{grid-area:thumb;position:relative;width:92px;height:92px;border-radius:4px;overflow:hidden}
 .lm-cd-sheet-photo{position:relative;height:240px}
 .lm-cd-chip{padding:8px 16px;font-size:12px}
 @media (max-width:560px){
   .lm-cd-topbar{justify-content:flex-start;flex-wrap:wrap;row-gap:6px}
   .lm-cd-horario{text-align:left}
-  .lm-cd-item-row{grid-template-columns:minmax(0,1fr) 72px;gap:12px}
-  .lm-cd-item-thumb{width:72px;height:72px}
+  .lm-cd-item-row{grid-template-columns:1fr;grid-template-areas:"thumb" "text";gap:10px;padding:16px 0}
+  .lm-cd-item-thumb{width:100%;height:auto;aspect-ratio:16/9}
   .lm-cd-sheet-photo{height:180px}
   .lm-cd-chip{padding:7px 13px;font-size:11px}
 }
@@ -87,7 +88,7 @@ button{font-family:inherit}
         <div style="display:flex;flex-direction:column">
           <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="2">
             <div onClick="{{ it.open }}" class="lm-cd-item-row" style-hover="background:rgba(233,201,143,.12)">
-              <div>
+              <div class="lm-cd-item-text">
                 <div style="font-size:17px;font-weight:500">{{ it.name }}</div>
                 <div style="margin-top:4px;font-size:14px;line-height:1.5;color:#5b564e">{{ it.desc }}</div>
                 <sc-if value="{{ it.tiersLabel }}" hint-placeholder-val="{{ false }}"><div style="margin-top:4px;font-size:12px;color:#8a3a2a">{{ it.tiersLabel }}</div></sc-if>
