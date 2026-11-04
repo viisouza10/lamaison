@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;background:#1c1c1a;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#e9c98f;text-decoration:none}
+a:hover{color:#ffffff}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="min-height:100vh;display:flex;justify-content:center;background:#1c1c1a;font-family:'Jost',sans-serif;font-weight:300;color:#ece9e2">
+  <main style="position:relative;width:100%;max-width:480px;min-height:100vh;overflow:hidden;background-color:#252523;background-image:radial-gradient(70% 40% at 50% 12%,rgba(255,255,255,.08),rgba(255,255,255,0) 70%);padding:56px 22px 40px">
+    <div style="position:absolute;inset:0;opacity:.16;pointer-events:none;mix-blend-mode:screen;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+
+    <header style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center">
+      <div data-g="avatar" style="width:104px;height:104px;border-radius:50%;padding:5px;background:#f4f1ea;box-shadow:0 14px 30px rgba(0,0,0,.45)">
+        <img src="https://ugc.production.linktr.ee/PAFkYC1LQz2Ojvel7fpa_85zN1I1yL1N34Ttn" alt="La Maison de La Bière" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;background:#111"></img>
+      </div>
+      <svg viewBox="0 0 440 80" style="width:100%;max-width:400px;height:auto;margin-top:18px;overflow:visible">
+        <text data-g="name" x="220" y="58" text-anchor="middle" style="font-family:'Covered By Your Grace',cursive;font-size:52px;fill:#ece9e2;fill-opacity:0;stroke:#ece9e2;stroke-width:1;stroke-dasharray:400;stroke-dashoffset:400">La Maison de La Bière</text>
+      </svg>
+      <div data-g="fade" style="display:inline-block;margin-top:6px;padding:6px 16px 4px;background:#f4f1ea;color:#1d1b18;font-family:'Covered By Your Grace',cursive;font-size:20px;transform:rotate(-2deg)">"A Casa da Cerveja"</div>
+      <div data-g="fade" style="margin-top:14px;font-size:13px;line-height:1.6;color:#b5b1a8">Av. Antonino Dias Bastos, 1065 · Centro · São Roque</div>
+      <div data-g="fade" style="margin-top:4px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e9c98f;text-align:center">Ter–Sex 17h–23h · Sáb 14h–23h · Dom 12h–18h · Seg fechado</div>
+    </header>
+
+    <a data-g="link" href="https://www.dguests.com/cardapioDelivery/lamaisondelabiere/delivery" target="_blank" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;padding:20px 22px;background:#e9c98f;color:#1d1b18;border-radius:4px;box-shadow:0 14px 30px rgba(0,0,0,.35)" style-hover="background:#f4f1ea;color:#1d1b18">
+      <div><div style="font-family:'Covered By Your Grace',cursive;font-size:28px;line-height:1">Pedir delivery</div><div style="margin-top:4px;font-size:12px;letter-spacing:.06em">Cardápio e entrega</div></div>
+      <span style="font-size:22px">→</span>
+    </a>
+
+    <div data-g="fade" style="margin:28px 0 12px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8f8b83">A casa</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ main }}" as="l" hint-placeholder-count="2">
+        <a data-g="link" href="{{ l.href }}" target="{{ l.target }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border:1.5px solid rgba(236,233,226,.7);border-radius:4px;color:#ece9e2" style-hover="background:#ece9e2;color:#252523">
+          <span style="font-size:15px;font-weight:400">{{ l.label }}</span><span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.7">{{ l.hint }}</span>
+        </a>
+      </sc-for>
+    </div>
+
+    <div data-g="fade" style="margin:28px 0 12px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8f8b83">Eventos · fotos</div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+      <sc-for list="{{ events }}" as="e" hint-placeholder-count="3">
+        <a data-g="link" href="{{ e.href }}" target="_blank" style="display:block;background:#f4f1ea;color:#1d1b18;padding:6px 6px 10px;box-shadow:0 10px 20px rgba(0,0,0,.4);transform:rotate({{ e.rot }})" style-hover="color:#8a3a2a">
+          <div style="position:relative;aspect-ratio:1"><image-slot id="{{ e.id }}" shape="rect" src="{{ e.src }}" placeholder="{{ e.photo }}"></image-slot></div>
+          <div style="margin-top:6px;font-family:'Covered By Your Grace',cursive;font-size:16px;line-height:1.05;text-align:center">{{ e.name }}</div>
+        </a>
+      </sc-for>
+    </div>
+
+    <div data-g="fade" style="margin:28px 0 12px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8f8b83">Como chegar</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ maps }}" as="m" hint-placeholder-count="3">
+        <a data-g="link" href="{{ m.href }}" target="_blank" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:14px 20px;background:rgba(244,241,234,.06);border-radius:4px;color:#ece9e2" style-hover="background:rgba(244,241,234,.14)">
+          <div><div style="font-family:'Covered By Your Grace',cursive;font-size:24px;line-height:1">{{ m.name }}</div><div style="margin-top:4px;font-size:12px;color:#b5b1a8">{{ m.addr }}</div></div>
+          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e9c98f">Mapa</span>
+        </a>
+      </sc-for>
+    </div>
+
+    <div data-g="fade" style="margin:28px 0 12px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8f8b83">Avalie e chegue até nós</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ more }}" as="x" hint-placeholder-count="4">
+        <a data-g="link" href="{{ x.href }}" target="_blank" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border:1.5px solid rgba(236,233,226,.7);border-radius:4px;color:#ece9e2" style-hover="background:#ece9e2;color:#252523">
+          <span style="font-size:15px;font-weight:400">{{ x.label }}</span><span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.7">{{ x.hint }}</span>
+        </a>
+      </sc-for>
+    </div>
+
+    <footer data-g="fade" style="margin-top:36px;display:flex;justify-content:center;gap:22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase">
+      <a href="tel:+551147123733">Ligar</a>
+      <a href="mailto:contato@lamaisondelabiere.com.br">E-mail</a>
+    </footer>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;480px&quot;,&quot;height&quot;:&quot;900px&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() { this.wait(); }
+  componentWillUnmount() { clearTimeout(this.t); if (this.ctx) this.ctx.revert(); }
+  wait() { if (window.gsap && this.rootRef.current) this.init(); else this.t = setTimeout(() => this.wait(), 60); }
+  init() {
+    const g = window.gsap, r = this.rootRef.current;
+    this.ctx = g.context(() => {
+      g.timeline({ delay: 0.15 })
+        .from(r.querySelector('[data-g=avatar]'), { scale: 0.6, opacity: 0, rotation: -20, duration: 0.9, ease: 'back.out(1.7)' })
+        .to(r.querySelector('[data-g=name]'), { strokeDashoffset: 0, duration: 1.6, ease: 'power1.inOut' }, 0.3)
+        .to(r.querySelector('[data-g=name]'), { fillOpacity: 1, strokeOpacity: 0, duration: 0.6 }, 1.5)
+        .from(r.querySelectorAll('[data-g=fade]'), { opacity: 0, y: 10, duration: 0.6, stagger: 0.08 }, 1.2)
+        .from(r.querySelectorAll('[data-g=link]'), { opacity: 0, y: 24, duration: 0.7, stagger: 0.06, ease: 'power3.out' }, 1.3);
+    }, r);
+  }
+  renderVals() {
+    return {
+      rootRef: this.rootRef,
+      main: [
+        { label: 'Cardápio online', hint: 'Ver', href: 'Cardapio.dc.html', target: '_self' },
+        { label: 'Site oficial', hint: 'Abrir', href: 'index.html', target: '_self' }
+      ],
+      events: [
+        { name: 'Beer Mile 6ª ed.', href: 'https://drive.google.com/drive/folders/19NOqYPm0ZfSVTRnxxJWgOeikvD9QGIRm', id: 'lk-ev-1', src: './assets/linktree-thumb-beer-mile.jpg', photo: 'Foto', rot: '-2deg' },
+        { name: '11 Ans', href: 'https://drive.google.com/drive/folders/1FM7zCXZbzCyL_WjO5Zmqbpqjs2N-2Fq2?usp=sharing', id: 'lk-ev-2', src: './assets/linktree-thumb-11-anos.jpg', photo: 'Foto', rot: '1.5deg' },
+        { name: 'Dix Ans', href: 'https://drive.google.com/drive/folders/1RkzrRya9H_igvvzwoZI-WXZWcqmrLOSR', id: 'lk-ev-3', src: './assets/linktree-thumb-dix-ans.jpg', photo: 'Foto', rot: '-1deg' }
+      ],
+      maps: [
+        { name: 'Bar Centro', addr: 'Av. Antonino Dias Bastos, 1065', href: 'https://www.google.com.br/maps/dir//La+Maison+De+La+Bi%C3%A8re+-+Avenida+Ant%C3%B4nino+Dias+Bastos+-+Centro,+S%C3%A3o+Roque+-+SP/@-23.5262269,-47.1691954,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94cf12aaffffffff:0x37d4adfdcdb973a1!2m2!1d-47.1341757!2d-23.5263095' },
+        { name: 'Cantina Tia Lina', addr: 'Estr. do Vinho (Spv-077), 10400', href: 'https://www.google.com/maps/place/Cantina+Tia+Lina/@-23.6124258,-47.1585104,17z/data=!3m1!4b1!4m6!3m5!1s0x94cf7360124321f3:0x7d70f6586c927841!8m2!3d-23.6124258!4d-47.1559355!16s%2Fg%2F11b7h48130?entry=ttu' },
+        { name: 'XV de Novembro', addr: 'Vinícola XV de Novembro · Km 4,5', href: 'https://www.google.com.br/maps/dir//Vin%C3%ADcola+XV+de+Novembro+-+Estr.+do+Vinho+(Spv-077),+Km+4,5+-+Sorocamirim,+S%C3%A3o+Roque+-+SP,+18145-100/@-23.5838052,-47.1417597,16z/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x94cf733698589565:0x1561d1db85bc9750!3e0' }
+      ],
+      more: [
+        { label: 'Instagram @lamaisonsaoroque', hint: 'Seguir', href: 'http://www.instagram.com/lamaisonsaoroque' },
+        { label: 'Avaliação no Google', hint: 'Avaliar', href: 'https://g.co/kgs/rYSXLrc' },
+        { label: 'Chegar de Waze', hint: 'Abrir', href: 'https://www.waze.com/ul?ll=-23.5278611%2C-47.1356565&navigate=yes&zoom=17' },
+        { label: 'Chamar um Uber', hint: 'Abrir', href: 'https://m.uber.com/ul/?client_id=WN_WM5dh-j9OPWM9vE9lRiSTivgGP0HB&action=setPickup&pickup=my_location&dropoff[latitude]=-23.5278611&dropoff[longitude]=-47.1356565&dropoff[nickname]=La%20Maison%20de%20La%20Bi%C3%A8re&dropoff[formatted_address]=Av.%20Ant%C3%B4nino%20Dias%20Bastos%2C%201065%20-%20Centro%2C%20S%C3%A3o%20Roque%20-%20SP%2C%20Brasil' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

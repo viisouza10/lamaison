@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;background:#f4f1ea;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#8a3a2a;text-decoration:none}
+a:hover{color:#1d1b18}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#f4f1ea;color:#1d1b18;font-family:'Jost',sans-serif;font-weight:300">
+  <header style="position:relative;background-color:#252523;color:#ece9e2;padding:40px 5vw 56px;overflow:hidden">
+    <img src="https://dg-media.com.br/banners/banner_702047.png?v=1733845810" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;display:block"></img>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(37,37,35,.55),rgba(37,37,35,.92))"></div>
+    <div style="position:relative;max-width:760px;margin:0 auto">
+      <img src="https://dg-media.com.br/avatars/avatar_702047.png?v=1733867998" alt="La Maison de La Bière" style="width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;margin-bottom:18px;border:3px solid #f4f1ea"></img>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <a href="index.html" style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b5b1a8">← Site</a>
+        <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e9c98f;text-align:right">Ter–Sex 17h–23h · Sáb 14h–23h · Dom 12h–18h · Seg fechado</span>
+      </div>
+      <div style="margin-top:28px;font-family:'Covered By Your Grace',cursive;font-size:clamp(44px,9vw,76px);line-height:1">La Maison de La Bière</div>
+      <div style="display:inline-block;margin-top:10px;padding:6px 18px 4px;background:#f4f1ea;color:#1d1b18;font-family:'Covered By Your Grace',cursive;font-size:22px;transform:rotate(-1.5deg)">Cardápio</div>
+      <div style="display:flex;margin-top:26px;padding:4px;border:1.5px solid rgba(236,233,226,.6);border-radius:999px;width:max-content">
+        <button onClick="{{ setSalao }}" style="border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;padding:10px 20px;border-radius:999px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;background:{{ salaoBg }};color:{{ salaoFg }}">No salão</button>
+        <button onClick="{{ setDelivery }}" style="border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;padding:10px 20px;border-radius:999px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;background:{{ delBg }};color:{{ delFg }}">Delivery</button>
+      </div>
+      <div style="margin-top:12px;font-size:13px;color:#b5b1a8">{{ modeNote }}</div>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:-1px;height:22px;background:#f4f1ea;clip-path:polygon(0 60%,4% 30%,9% 70%,14% 40%,19% 75%,25% 35%,31% 65%,37% 25%,43% 70%,49% 40%,55% 80%,61% 35%,67% 65%,73% 30%,79% 72%,85% 38%,91% 68%,96% 32%,100% 60%,100% 100%,0 100%)"></div>
+  </header>
+
+  <div style="position:sticky;top:0;z-index:20;background:rgba(244,241,234,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(29,27,24,.1)">
+    <div style="max-width:760px;margin:0 auto;padding:12px 5vw 10px">
+      <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Buscar no cardápio" style="width:100%;padding:12px 16px;border:1.5px solid rgba(29,27,24,.25);border-radius:4px;background:#fffdf8;font-family:'Jost',sans-serif;font-size:15px;color:#1d1b18;outline:none"></input>
+      <div style="display:flex;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none">
+        <sc-for list="{{ chips }}" as="c" hint-placeholder-count="12">
+          <button onClick="{{ c.go }}" style="flex-shrink:0;cursor:pointer;padding:8px 16px;border-radius:999px;border:1.5px solid #1d1b18;font-size:12px;letter-spacing:.08em;background:{{ c.bg }};color:{{ c.fg }}">{{ c.name }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <main style="max-width:760px;margin:0 auto;padding:10px 5vw 140px">
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="3">
+      <section id="{{ s.anchor }}" style="padding-top:34px;scroll-margin-top:130px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1.5px solid #1d1b18;padding-bottom:8px">
+          <h2 style="margin:0;font-family:'Covered By Your Grace',cursive;font-weight:400;font-size:38px;line-height:1">{{ s.name }}</h2>
+          <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7a746a">{{ s.count }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="2">
+            <div onClick="{{ it.open }}" style="display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(29,27,24,.12);cursor:pointer" style-hover="background:rgba(233,201,143,.12)">
+              <div>
+                <div style="font-size:17px;font-weight:500">{{ it.name }}</div>
+                <div style="margin-top:4px;font-size:14px;line-height:1.5;color:#5b564e">{{ it.desc }}</div>
+                <sc-if value="{{ it.tiersLabel }}" hint-placeholder-val="{{ false }}"><div style="margin-top:4px;font-size:12px;color:#8a3a2a">{{ it.tiersLabel }}</div></sc-if>
+                <div style="display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap">
+                  <sc-if value="{{ it.priceLabel }}" hint-placeholder-val="{{ false }}"><span style="font-size:15px;font-weight:500;color:#8a3a2a">{{ it.priceLabel }}</span></sc-if>
+                  <sc-if value="{{ it.qtyLabel }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:#1d1b18;color:#f4f1ea;font-size:11px">{{ it.qtyLabel }}</span></sc-if>
+                  <sc-if value="{{ it.veg }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:rgba(138,58,42,.12);color:#8a3a2a;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Vegetariano</span></sc-if>
+                  <sc-if value="{{ it.semGluten }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:rgba(138,58,42,.12);color:#8a3a2a;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Sem glúten</span></sc-if>
+                  <sc-if value="{{ it.semLactose }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:rgba(138,58,42,.12);color:#8a3a2a;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Sem lactose</span></sc-if>
+                </div>
+              </div>
+              <sc-if value="{{ it.photo }}" hint-placeholder-val="{{ false }}"><div style="position:relative;width:92px;height:92px;border-radius:4px;overflow:hidden"><image-slot id="{{ it.slot }}" shape="rect" src="{{ it.photo }}" placeholder="Foto"></image-slot></div></sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-for>
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:60px 0;text-align:center;font-family:'Covered By Your Grace',cursive;font-size:28px;color:#7a746a">Nada encontrado.</div>
+    </sc-if>
+    <p style="margin:40px 0 0;font-size:12px;line-height:1.6;color:#7a746a">O cardápio de comida está disponível somente na unidade do Centro. *Imagens meramente ilustrativas. Itens sem foto cadastrada aparecem sem miniatura.</p>
+  </main>
+
+  <sc-if value="{{ showCart }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:0;right:0;bottom:0;z-index:30;padding:14px 5vw 18px;background:#252523;color:#ece9e2;box-shadow:0 -10px 30px rgba(0,0,0,.25)">
+      <div style="max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px">
+        <div><div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b5b1a8">{{ cartCount }}</div><div style="font-size:20px;font-weight:500">{{ cartTotal }}</div></div>
+        <a href="https://www.dguests.com/cardapioDelivery/lamaisondelabiere/delivery" target="_blank" style="padding:14px 24px;border-radius:4px;background:#e9c98f;color:#1d1b18;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500" style-hover="background:#f4f1ea;color:#1d1b18">Finalizar pedido →</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ sheet }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:40;background:rgba(20,18,16,.55);display:flex;align-items:flex-end;justify-content:center">
+      <div onClick="{{ stop }}" style="width:100%;max-width:560px;background:#f4f1ea;border-radius:14px 14px 0 0;overflow:hidden;animation:none">
+        <sc-if value="{{ sheet.photo }}" hint-placeholder-val="{{ false }}"><div style="position:relative;height:240px"><image-slot id="{{ sheet.slot }}" shape="rect" src="{{ sheet.photo }}" placeholder="Foto do prato"></image-slot></div></sc-if>
+        <div style="padding:22px 24px 26px">
+          <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8a3a2a">{{ sheet.cat }}</div>
+          <div style="margin-top:6px;font-family:'Covered By Your Grace',cursive;font-size:36px;line-height:1">{{ sheet.name }}</div>
+          <div style="margin-top:10px;font-size:15px;line-height:1.6;color:#5b564e">{{ sheet.desc }}</div>
+          <sc-if value="{{ sheet.tiersLabel }}" hint-placeholder-val="{{ false }}"><div style="margin-top:8px;font-size:13px;color:#8a3a2a">{{ sheet.tiersLabel }}</div></sc-if>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+            <sc-if value="{{ sheet.veg }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:rgba(138,58,42,.12);color:#8a3a2a;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Vegetariano</span></sc-if>
+            <sc-if value="{{ sheet.semGluten }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:rgba(138,58,42,.12);color:#8a3a2a;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Sem glúten</span></sc-if>
+            <sc-if value="{{ sheet.semLactose }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 8px;border-radius:999px;background:rgba(138,58,42,.12);color:#8a3a2a;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Sem lactose</span></sc-if>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px">
+            <span style="font-size:20px;font-weight:500;color:#8a3a2a">{{ sheet.priceLabel }}</span>
+            <sc-if value="{{ showStepper }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:12px">
+                <button onClick="{{ dec }}" style="width:40px;height:40px;border-radius:50%;border:1.5px solid #1d1b18;background:transparent;font-size:18px;cursor:pointer;color:#1d1b18">–</button>
+                <span style="min-width:20px;text-align:center;font-size:17px;font-weight:500">{{ sheetQty }}</span>
+                <button onClick="{{ inc }}" style="width:40px;height:40px;border-radius:50%;border:none;background:#1d1b18;color:#f4f1ea;font-size:18px;cursor:pointer">+</button>
+              </div>
+            </sc-if>
+          </div>
+          <button onClick="{{ close }}" style="width:100%;margin-top:22px;padding:15px;border:none;border-radius:4px;background:#252523;color:#ece9e2;font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer">{{ closeLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;salao&quot;,&quot;delivery&quot;],&quot;default&quot;:&quot;salao&quot;,&quot;tsType&quot;:&quot;'salao'|'delivery'&quot;}}">
+class Component extends DCLogic {
+  state = { mode: this.props.defaultMode === 'delivery' ? 'delivery' : 'salao', cat: 0, query: '', open: null, cart: {} };
+  data = [
+    ['Porções', [
+      {n:'Batata Brava Rústica', d:'Porção de Batata Rústica Temperada Picante. Acompanha maionese especial da casa.', p:34, photo:'./assets/prato-batata-brava-rustica.jpg'},
+      {n:'Bolinho de Carne Seca', d:'Bolinho de carne seca com parmesão. Acompanha geleia de pimenta da casa.', p:65, photo:'./assets/prato-bolinho-de-carne-seca.jpg'},
+      {n:'Ancho Especial', d:'Porção de Corte Ancho, aproximadamente 300g, com fatias de copa defumada levemente chapeadas, com um delicioso molho de gorgonzola. Acompanha pão.', p:125, photo:'./assets/prato-ancho-especial.jpg'},
+      {n:'Calabresa com Provolone', d:'Porção de calabresa fina caracol recheada de provolone. Acompanha pão.', p:65, photo:'./assets/prato-calabresa-com-provolone.jpg'},
+      {n:'Batata Brava Chips', d:'Porção de Batata Chips Temperada Picante, acompanha maionese especial da casa.', p:34, photo:'./assets/prato-batata-brava-chips.jpg'},
+      {n:'Franguinho do Divino', d:'Porção de frango a passarinho desossado temperado com alho.', p:55, photo:'./assets/prato-franguinho-do-divino.jpg'},
+      {n:'Mini Kafta de Cordeiro', d:'Porção de mini kafta de cordeiro temperada.', p:65, photo:'./assets/prato-mini-kafta-de-cordeiro.jpg'},
+      {n:'Salsicha Alemã Temperada', d:'Porção de salsicha alemã de vitela fatiada e temperada. Acompanha pão.', p:55, photo:'./assets/prato-salsicha-alema-temperada.jpg'},
+      {n:'Tábua Mista', d:'Tábua de embutidos contendo salame da casa, lombo condimentado, copa defumada, picanha defumada, queijo conté, queijo parmesão e queijo gorgonzola. Aproximadamente 50g de cada. Acompanha geleia de frutas vermelhas, geleia de pimenta e pão.', p:135, photo:'./assets/prato-tabua-mista.jpg'},
+      {n:'Linguiça Mettwurst', d:'Linguiça alemã tipo Blumenau crua defumada. Acompanha pão.', p:88, photo:'./assets/prato-linguica-mettwurst.jpg'},
+      {n:'Queijo Gorgonzola', d:'Porção de 100g de queijo gorgonzola dulce — textura cremosa cor palha com veios azuis, sabor suave, amanteigado e adocicado.', p:25, photo:'./assets/prato-queijo-gorgonzola.jpg'},
+      {n:'Queijo Comté', d:'Porção de 100g de queijo comté — textura densa e firme, cor amarelo claro, sabor frutado, salgado, picante e nozes.', p:25, photo:'./assets/prato-queijo-comte.jpg'},
+      {n:'Queijo Parmesão', d:'Porção de 100g de queijo parmesão — textura firme e densa, sabor intenso.', p:25, photo:'./assets/prato-queijo-parmesao.jpg'}
+    ]],
+    ['Carnes Nobres', [
+      {n:'Bife de Chorizo', d:'Corte nobre com aproximadamente 300g, carne macia, de sabor acentuado, com capa de gordura lateral.', p:90, photo:'./assets/prato-bife-de-chorizo.jpg'},
+      {n:'Bife Ancho', d:'Corte nobre com aproximadamente 300g, carne macia, de sabor acentuado, com pouca gordura.', p:95, photo:'./assets/prato-bife-ancho.jpg'},
+      {n:'Short Rib', d:'Corte nobre com aproximadamente 400g, bife com osso retirado da costela do dianteiro, rico em sabor e maciez.', p:110, photo:'./assets/prato-short-rib.jpg'},
+      {n:'Flat Iron Steak', d:'Corte nobre com aproximadamente 350g. Retirado da paleta (raquete), segundo corte mais macio do boi, atrás apenas do filé mignon.', p:145, photo:'./assets/prato-flat-iron-steak.jpg'},
+      {n:'Porterhouse', d:'Corte nobre de carnes altas, aproximadamente 900g (com osso), combinação de contra filé e filé mignon.', p:250, photo:'./assets/prato-porterhouse.jpg'},
+      {n:'Picanha', d:'Steak de picanha com aproximadamente 550g, corte tradicional de churrasco, maciez superior e suculenta.', p:190, photo:'./assets/prato-picanha.jpg'}
+    ]],
+    ['Acompanhamentos', [
+      {n:'Guarnição Tradicional', d:'Arroz biro-biro, farofa da casa e vinagrete.', p:27, photo:null},
+      {n:'Arroz Biro Biro', d:'Arroz com ovos e bacon.', p:15, photo:null},
+      {n:'Arroz Branco', d:'Arroz branco.', p:12, photo:null},
+      {n:'Farofa', d:'Farofa da casa.', p:10, photo:null},
+      {n:'Vinagrete', d:'Vinagrete da casa.', p:8, photo:null}
+    ]],
+    ['Pratos', [
+      {n:'Risoto La Maison', d:'Risoto de copa defumada, queijo brie e nozes.', p:60, photo:'./assets/prato-risoto-la-maison.jpg'},
+      {n:'Risoto Belga', d:'Risoto de alho poró com gorgonzola.', p:60, photo:'./assets/prato-risoto-belga.jpg'},
+      {n:'Quadrucci à La Bière', d:'Massa ravioli artesanal recheada com ossobuco e parmesão, molho a escolha (pomodoro ou branco).', p:80, photo:'./assets/prato-quadrucci-a-la-biere.jpg'},
+      {n:'Quadrucci Blonde', d:'Massa ravioli artesanal recheada de mussarela e alcachofra. Molho a escolha (pomodoro ou branco).', p:80, photo:'./assets/prato-quadrucci-blonde.jpg'}
+    ]],
+    ['Saladas', [
+      {n:'Salada La Maison', d:'Mix de folhas, parmesão ralado, tomate cereja e croutons.', p:28, photo:'./assets/prato-salada-la-maison.jpg', veg:true}
+    ]],
+    ['Burguers', [
+      {n:'Classic Burguer', d:'Hambúrguer smash de 80g, queijo cheddar, ketchup e mostarda.', p:22, photo:'./assets/prato-classic-burguer.jpg'},
+      {n:'Smash Burguer', d:'Dois hambúrgueres smash de 80g cada, mix de queijos (cheddar e mussarela), bacon picado, alface e maionese especial.', p:36, photo:'./assets/prato-smash-burguer.jpg'},
+      {n:'Houblon Burguer', d:'Hambúrguer de 160g, queijo gorgonzola, mussarela, crispe de alho poró e maionese especial.', p:43, photo:'./assets/prato-houblon-burguer.jpg'},
+      {n:'Russian Imperial Burguer', d:'Hambúrguer de 160g, queijo cheddar, alface, tomate, bacon em fatias, cebola roxa, picles e maionese especial.', p:40, photo:'./assets/prato-russian-imperial-burguer.jpg'},
+      {n:'BitterSweet Burguer', d:'Hambúrguer de 160g, queijo brie, geleia de frutas vermelhas, rúcula, tomate seco e maionese especial.', p:39, photo:'./assets/prato-bittersweet-burguer.jpg'},
+      {n:'Dry Aged Burguer', d:'Hambúrguer de 180g de blend de carnes dry-aged, maturação de 30 dias, queijo cheddar e maionese especial.', p:65, photo:'./assets/prato-dry-aged-burguer.jpg'},
+      {n:'Duck Burguer', d:'Hambúrguer de carne de pato com 180g, queijo camembert empanado e frito, creme de abobrinha, amêndoas laminadas, mel e maionese especial.', p:85, photo:'./assets/prato-duck-burguer.jpg'},
+      {n:'Un Scheile Porc', d:'Pernil desfiado, marinado 6 horas na cerveja pilsen, queijo mussarela, molho barbecue e maionese especial.', p:32, photo:'./assets/prato-un-scheile-porc.jpg'},
+      {n:'Hamburguer Vegetariano', d:'Escolha qualquer um dos lanches e troque pelo hambúrguer VEGG feito com grão de bico e cenoura.', p:null, priceOverride:'Opção de troca, sem custo', photo:'./assets/prato-hamburguer-vegetariano.jpg', veg:true},
+      {n:'Schlenkerla Bourbon Burguer', d:'Hambúrguer de 160g, queijo cheddar, bacon caramelizado e finalizado no bourbon, maionese especial.', p:38, photo:'./assets/prato-schlenkerla-bourbon-burguer.jpg'},
+      {n:'Czech Burguer', d:'Hambúrguer de 160g, blend especial de queijos selecionados e maionese especial.', p:35, photo:'./assets/prato-czech-burguer.jpg'},
+      {n:'Morde Essa La Maison', d:'Dois hambúrgueres smash de 80g cada, queijo cheddar, cebola roxa caramelizada, fatias de picanha suína defumada e maionese especial.', p:39.9, photo:'./assets/prato-morde-essa-la-maison.jpg'}
+    ]],
+    ['Sobremesas', [
+      {n:'Petit Gâteau', d:'Bolinho de chocolate com recheio cremoso, servido com sorvete de creme.', p:30, photo:'./assets/prato-petit-gateau.jpg'},
+      {n:'Cheesecake Rouges', d:'Cheesecake com geleia de frutas vermelhas.', p:30, photo:'./assets/prato-cheesecake-rouges.jpg'}
+    ]],
+    ['Nas Torneiras / On Tap', [
+      {n:'1. Pilsen', d:'Pilsen — 4,9% ABV · 20 IBU — La Maison de La Bière, São Roque/SP. Pilsen tradicional da casa.', photo:'./assets/prato-1-pilsen.jpg', tiers:[{l:'150ml',p:9},{l:'350ml',p:18},{l:'500ml',p:27}]},
+      {n:'2. Witbier', d:'Blue Moon Belgian White — 5,4% ABV · 9 IBU — Blue Moon Brewing Co., EUA.', photo:'./assets/prato-2-witbier.jpg', tiers:[{l:'150ml',p:12},{l:'350ml',p:25}]},
+      {n:'3. Rotbier', d:'Kyojuudude — 5,2% ABV — Dude Brewing, Caxias do Sul/RS.', photo:'./assets/prato-3-rotbier.jpg', tiers:[{l:'150ml',p:11},{l:'350ml',p:22},{l:'500ml',p:30}]},
+      {n:'4. Catharina Sour com Maracujá e Goiaba', d:'Sunrise — 3,9% ABV · 6 IBU — Cervejaria BlacaMan, Campinas/SP.', photo:'./assets/prato-4-catharina-sour-com-maracuja-e-goiaba.jpg', tiers:[{l:'150ml',p:10},{l:'350ml',p:2}]},
+      {n:'5. Double New England IPA', d:'The Hop Is In The Head — 8,4% ABV — Cervejaria Dogma, São Paulo/SP.', photo:'./assets/prato-5-double-new-england-ipa.jpg', tiers:[{l:'150ml',p:19},{l:'350ml',p:38},{l:'500ml',p:53}]},
+      {n:'6. Festbier', d:'Paulaner Oktoberfest — 6% ABV — Paulaner Brauerei, Alemanha.', photo:'./assets/prato-6-festbier.jpg', tiers:[{l:'150ml',p:17},{l:'350ml',p:34},{l:'500ml',p:45}]},
+      {n:'7. IPA', d:'American IPA — 6,2% ABV · 51 IBU — Lagunitas Brewing Company, EUA.', photo:'./assets/prato-7-ipa.jpg', tiers:[{l:'150ml',p:12},{l:'350ml',p:25}]},
+      {n:'8. Lambic com Cereja', d:'Meerts Tilquin à la Kriek de Schaerbeek — 5% ABV — Gueuzerie Tilquin, Bélgica.', photo:'./assets/prato-8-lambic-com-cereja.jpg', tiers:[{l:'150ml',p:52},{l:'350ml',p:99}]},
+      {n:'9. Imperial Stout com Doce de Leite, Macadâmia e Amêndoas', d:'Bolo Imperial — 10,5% ABV — Hamkzbier, Juiz de Fora/MG.', photo:'./assets/prato-9-imperial-stout-com-doce-de-leite-macadamia-e-amendoas.jpg', tiers:[{l:'150ml',p:22},{l:'350ml',p:44}]},
+      {n:'10. Imperial Stout com Café, Cacau, Paçoca e Baunilha', d:'ICON Ed. Douze Ans — 10% ABV — Spartacus Brewing, Juiz de Fora/MG. Edição comemorativa de 12 anos.', photo:'./assets/prato-10-imperial-stout-com-cafe-cacau-pacoca-e-baunilha.jpg', tiers:[{l:'150ml',p:27},{l:'300ml',p:54}]},
+      {n:'11. Imperial Stout com Café, Cacau e Maple Baunilha', d:'Neuf Ans Imperial Stout — 12% ABV — La Maison de La Bière, São Roque/SP. Comemorativa de 9 anos, em parceria com a Cervejaria Croma.', photo:'./assets/prato-11-imperial-stout-com-cafe-cacau-maple-baunilha.jpg', tiers:[{l:'150ml',p:20},{l:'350ml',p:39}]},
+      {n:'12. Tripel', d:'Tripel — 9% ABV · 22 IBU — Bierinbox, Paulínia/SP.', photo:'./assets/prato-12-tripel.jpg', tiers:[{l:'150ml',p:12},{l:'350ml',p:24}]},
+      {n:'13. Imperial Stout com Cacau, Coco e Nozes', d:'Dark Days — 12% ABV — Croma, São Paulo/SP.', photo:'./assets/prato-13-imperial-stout-com-cacau-coco-e-nozes.jpg', tiers:[{l:'150ml',p:22},{l:'350ml',p:44}]},
+      {n:'14. Quadrupel', d:'La Trappe Quadrupel — 10% ABV · 22 IBU — Bierbrouwerij De Koningshoeven, Holanda. Cerveja trapista feita por monges.', photo:'./assets/prato-14-quadrupel.jpg', tiers:[{l:'150ml',p:35},{l:'300ml',p:69}]},
+      {n:'15. Irish Dry Stout', d:'Gordiness — 4,7% ABV · 30 IBU — Dude Brewing, Caxias do Sul/RS.', photo:'./assets/prato-15-irish-dry-stout.jpg', tiers:[{l:'150ml',p:10},{l:'350ml',p:20},{l:'500ml',p:27}]}
+    ]],
+    ['Cervejas em Latas e Garrafas', [
+      {n:'Cervejas em Latas e Garrafas', d:'Grande variedade de cervejas sazonais rotativas — consulte disponibilidade e valores no balcão.', p:null, priceOverride:'Consulte no balcão', photo:'./assets/prato-cervejas-em-latas-e-garrafas.jpg'}
+    ]],
+    ['Bebidas Não Alcoólicas', [
+      {n:'Guaraná Lata 350ml', d:'', p:10, photo:'./assets/prato-guarana-lata-350ml.jpg'},
+      {n:'Guaraná Zero Lata 350ml', d:'', p:10, photo:'./assets/prato-guarana-zero-lata-350ml.jpg'},
+      {n:'Coca-Cola Ks 290ml', d:'', p:10, photo:'./assets/prato-coca-cola-ks-290ml.jpg'},
+      {n:'Coca-Cola Zero Ks 290ml', d:'', p:10, photo:'./assets/prato-coca-cola-zero-ks-290ml.jpg'},
+      {n:'Sprite Lata 350ml', d:'', p:10, photo:'./assets/prato-sprite-lata-350ml.jpg'},
+      {n:'Sprite Zero Lata 350ml', d:'', p:10, photo:'./assets/prato-sprite-zero-lata-350ml.jpg'},
+      {n:'Suco de Uva Integral 290ml', d:'', p:19, photo:'./assets/prato-suco-de-uva-integral-290ml.jpg'},
+      {n:'Suco de Laranja Integral 300ml', d:'', p:19, photo:'./assets/prato-suco-de-laranja-integral-300ml.jpg'},
+      {n:'Água sem Gás', d:'', p:8, photo:'./assets/prato-agua-sem-gas.jpg'},
+      {n:'Água com Gás', d:'', p:8, photo:'./assets/prato-agua-com-gas.jpg'}
+    ]],
+    ['Vinhos', [
+      {n:'Philosophia Cabernet Franc 750ml', d:'Vinho da vinícola Philosophia, São Roque/SP — Brasil.', p:249, photo:'./assets/prato-philosophia-cabernet-franc-750ml.jpg'},
+      {n:'Fray Leon Cabernet Sauvignon 375ml', d:'Cabernet Sauvignon da vinícola Fray Leon, Chile.', p:59, photo:'./assets/prato-fray-leon-cabernet-sauvignon-375ml.jpg'},
+      {n:'Ola Po Merlot 750ml', d:'Merlot da vinícola Ola Po, Valle de Curicó — Chile.', p:99, photo:'./assets/prato-ola-po-merlot-750ml.jpg'},
+      {n:'Alma Galiza Zoe Sauvignon Blanc 750ml', d:'Sauvignon Blanc da vinícola Alma Galiza, São Roque/SP — Brasil.', p:179, photo:'./assets/prato-alma-galiza-zoe-sauvignon-blanc-750ml.jpg'},
+      {n:'Perez Cruz Gran Reserva Cabernet Sauvignon 750ml', d:'Cabernet Sauvignon, Gran Reserva da vinícola Perez Cruz, Chile.', p:169, photo:'./assets/prato-perez-cruz-gran-reserva-cabernet-sauvignon-750ml.jpg'},
+      {n:'Alma Galiza Zoe Syrah Gran Reserva 750ml', d:'Syrah Gran Reserva da vinícola Alma Galiza, São Roque/SP — Brasil.', p:299, photo:'./assets/prato-alma-galiza-zoe-syrah-gran-reserva-750ml.jpg'},
+      {n:'Mil Raices Cabernet Sauvignon 187ml', d:'Cabernet Sauvignon da vinícola Mil Raices, Chile.', p:39, photo:'./assets/prato-mil-raices-cabernet-sauvignon-187ml.jpg'},
+      {n:'Ola Po Cabernet Sauvignon 750ml', d:'Cabernet Sauvignon da vinícola Ola Po, Valle de Curicó — Chile.', p:99, photo:'./assets/prato-ola-po-cabernet-sauvignon-750ml.jpg'},
+      {n:'Ola Po Chardonnay 750ml', d:'Chardonnay da vinícola Ola Po, Valle de Curicó — Chile.', p:99, photo:'./assets/prato-ola-po-chardonnay-750ml.jpg'}
+    ]],
+    ['Drinks', [
+      {n:'Caipirinha', d:'Caipirinha da casa com cachaça Salinas e limão taiti.', p:29, photo:null},
+      {n:'Caipiroska', d:'Caipiroska da casa com Vodka Absolut e limão taiti.', p:29, photo:null},
+      {n:'Negroni', d:'Coquetel clássico italiano. Gin Southwest, Vermute Carpano Rosso e Campari.', p:39, photo:null},
+      {n:'Whisky Sour', d:'Whisky (Jim Beam), limão fresco e toque adocicado.', p:39, photo:null},
+      {n:'Gin Tônica', d:'Gin Southwest, tônica zero e limão siciliano.', p:36, photo:null},
+      {n:'Campari — Dose', d:'Bitter italiano de cor vermelha vibrante, aroma intenso e sabor amargo equilibrado.', p:27, photo:null},
+      {n:'Jameson — Dose', d:'Whisky leve e suave, sabor equilibrado, toque de baunilha e especiarias.', p:27, photo:null},
+      {n:'Jim Beam — Dose', d:'Bourbon clássico, notas de caramelo e madeira.', p:27, photo:null}
+    ]]
+  ];
+  fmt(v) { return 'R$ ' + v.toFixed(2).replace('.', ','); }
+  priceLabelFor(it) {
+    if (it.priceOverride) return it.priceOverride;
+    if (it.tiers) return 'A partir de ' + this.fmt(it.tiers[0].p);
+    if (it.p == null) return '';
+    return this.fmt(it.p);
+  }
+  go(i) {
+    this.setState({ cat: i });
+    const el = document.getElementById('cat-' + i);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+  }
+  setQty(id, d) { this.setState(s => { const c = { ...s.cart }; c[id] = Math.max(0, (c[id] || 0) + d); if (!c[id]) delete c[id]; return { cart: c }; }); }
+  renderVals() {
+    const { mode, cat, query, open, cart } = this.state, del = mode === 'delivery';
+    const qn = query.trim().toLowerCase();
+    const all = [];
+    const sections = this.data.map(([name, items], ci) => {
+      const list = items.map((it, ii) => {
+        const id = ci + '-' + ii;
+        const price = it.tiers ? it.tiers[0].p : it.p;
+        const item = { id, cat: name, name: it.n, desc: it.d, price, photo: it.photo || null, veg: !!it.veg, semGluten: !!it.semGluten, semLactose: !!it.semLactose, tiers: it.tiers || null, priceOverride: it.priceOverride || null, purchasable: price != null, slot: 'lm-cd-' + id };
+        all.push(item);
+        return item;
+      }).filter(it => !qn || (it.name + ' ' + it.desc).toLowerCase().includes(qn))
+        .map(it => ({ ...it, priceLabel: this.priceLabelFor({ p: it.price, priceOverride: it.priceOverride, tiers: it.tiers }), tiersLabel: it.tiers ? it.tiers.map(t => t.l + ' ' + this.fmt(t.p)).join(' · ') : '', qtyLabel: del && cart[it.id] ? cart[it.id] + 'x' : '', open: () => this.setState({ open: it.id }) }));
+      return { name, anchor: 'cat-' + ci, items: list, count: list.length + (list.length === 1 ? ' item' : ' itens') };
+    }).filter(s => s.items.length);
+    const sel = all.find(i => i.id === open);
+    const count = Object.values(cart).reduce((a, b) => a + b, 0);
+    const total = all.reduce((a, i) => a + (cart[i.id] || 0) * (i.price || 0), 0);
+    const on = ['#e9c98f', '#1d1b18'], off = ['transparent', '#ece9e2'];
+    return {
+      setSalao: () => this.setState({ mode: 'salao' }), setDelivery: () => this.setState({ mode: 'delivery' }),
+      salaoBg: del ? off[0] : on[0], salaoFg: del ? off[1] : on[1], delBg: del ? on[0] : off[0], delFg: del ? on[1] : off[1],
+      modeNote: del ? 'Monte seu pedido e finalize no delivery.' : 'Toque em um prato para ver os detalhes.',
+      isDelivery: del,
+      query, onQuery: e => this.setState({ query: e.target.value }),
+      chips: this.data.map(([name], i) => ({ name, go: () => this.go(i), bg: i === cat ? '#1d1b18' : 'transparent', fg: i === cat ? '#f4f1ea' : '#1d1b18' })),
+      sections, empty: !sections.length,
+      sheet: sel ? { ...sel, priceLabel: this.priceLabelFor({ p: sel.price, priceOverride: sel.priceOverride, tiers: sel.tiers }), tiersLabel: sel.tiers ? sel.tiers.map(t => t.l + ' ' + this.fmt(t.p)).join(' · ') : '' } : null,
+      sheetQty: sel ? (cart[sel.id] || 0) : 0,
+      showStepper: del && !!sel && sel.purchasable,
+      inc: () => sel && this.setQty(sel.id, 1), dec: () => sel && this.setQty(sel.id, -1),
+      close: () => this.setState({ open: null }), stop: e => e.stopPropagation(),
+      closeLabel: del ? 'Continuar comprando' : 'Fechar',
+      showCart: del && count > 0,
+      cartCount: count + (count === 1 ? ' item' : ' itens'), cartTotal: this.fmt(total)
+    };
+  }
+}
+</script>
+</body>
+</html>

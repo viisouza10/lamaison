@@ -1,0 +1,501 @@
+{
+  "gerado_em": "2026-11-04",
+  "projeto": "La Maison de La Bière — São Roque/SP",
+  "observacoes": [
+    "Nenhuma foto foi inventada; itens do cardápio sem foto na fonte (DGuests) ficam sem miniatura no site.",
+    "Todas as fotos com requer_autorizacao_de_imagem=true mostram pessoas reais em eventos e precisam de autorização de uso antes de publicação definitiva.",
+    "A pasta do Google Drive \"Dix Ans / 10 anos\" (https://drive.google.com/drive/folders/1RkzrRya9H_igvvzwoZI-WXZWcqmrLOSR) retornou 404 mesmo autenticado — não está compartilhada publicamente; só a miniatura do Linktree foi usada para esse álbum.",
+    "A unidade \"Cantina Tia Lina\" aparece no site oficial rotulada como \"Vila Don Patto\" no mesmo endereço — usamos o nome pedido, mas vale confirmar com o cliente."
+  ],
+  "arquivos": {
+    "evento-11-anos-01.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-02.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-03.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-04.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-05.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-06.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-07.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-08.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-11-anos-09.jpg": {
+      "origem": "Google Drive — álbum \"11 Ans / Onze anos\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento 11 Ans",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-01.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-02.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-03.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-04.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-05.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-06.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-07.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "evento-beer-mile-08.jpg": {
+      "origem": "Google Drive — álbum \"Beer Mile Brasil 6ª edição\" (pasta pública)",
+      "uso": "La Maison - Proposta v5.dc.html — lightbox do evento Beer Mile",
+      "requer_autorizacao_de_imagem": true
+    },
+    "linktree-thumb-11-anos.jpg": {
+      "origem": "Linktree (__NEXT_DATA__) linktr.ee/lamaisondelabiere",
+      "uso": "Links.dc.html — card do evento \"11-anos\"; La Maison - Proposta v5.dc.html — capa do evento \"11-anos\" no lightbox",
+      "requer_autorizacao_de_imagem": true
+    },
+    "linktree-thumb-beer-mile.jpg": {
+      "origem": "Linktree (__NEXT_DATA__) linktr.ee/lamaisondelabiere",
+      "uso": "Links.dc.html — card do evento \"beer-mile\"; La Maison - Proposta v5.dc.html — capa do evento \"beer-mile\" no lightbox",
+      "requer_autorizacao_de_imagem": true
+    },
+    "linktree-thumb-dix-ans.jpg": {
+      "origem": "Linktree (__NEXT_DATA__) linktr.ee/lamaisondelabiere",
+      "uso": "Links.dc.html — card do evento \"dix-ans\"; La Maison - Proposta v5.dc.html — capa do evento \"dix-ans\" no lightbox",
+      "requer_autorizacao_de_imagem": true
+    },
+    "og.jpg": {
+      "origem": "já existente no projeto Design",
+      "uso": "La Maison - Proposta v5.dc.html — Hero (torneiras)"
+    },
+    "prato-1-pilsen.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389533_1890158810.webp?v=176782250",
+      "uso": "Cardapio.dc.html — item \"1. Pilsen\" (Nas Torneiras / On Tap)"
+    },
+    "prato-10-imperial-stout-com-cafe-cacau-pacoca-e-baunilha.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389292_39241787.webp?v=291820350",
+      "uso": "Cardapio.dc.html — item \"10. Imperial Stout com café, cacau, paçoca e baunilha\" (Nas Torneiras / On Tap)"
+    },
+    "prato-11-imperial-stout-com-cafe-cacau-maple-baunilha.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389293_349189939.webp?v=134727590",
+      "uso": "Cardapio.dc.html — item \"11. Imperial Stout com café, cacau, maple baunilha\" (Nas Torneiras / On Tap)"
+    },
+    "prato-12-tripel.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389294_840837454.webp?v=803286578",
+      "uso": "Cardapio.dc.html — item \"12. Tripel\" (Nas Torneiras / On Tap)"
+    },
+    "prato-13-imperial-stout-com-cacau-coco-e-nozes.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389295_2105223560.webp?v=1024000393",
+      "uso": "Cardapio.dc.html — item \"13. Imperial Stout com cacau, coco e nozes\" (Nas Torneiras / On Tap)"
+    },
+    "prato-14-quadrupel.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387852_997776275.webp?v=1719066301",
+      "uso": "Cardapio.dc.html — item \"14. Quadrupel\" (Nas Torneiras / On Tap)"
+    },
+    "prato-15-irish-dry-stout.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389296_2071444665.webp?v=681542470",
+      "uso": "Cardapio.dc.html — item \"15. Irish Dry Stout\" (Nas Torneiras / On Tap)"
+    },
+    "prato-2-witbier.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388742_1829675656.webp?v=990488354",
+      "uso": "Cardapio.dc.html — item \"2. Witbier\" (Nas Torneiras / On Tap)"
+    },
+    "prato-3-rotbier.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388743_409003770.webp?v=1499724193",
+      "uso": "Cardapio.dc.html — item \"3. Rotbier\" (Nas Torneiras / On Tap)"
+    },
+    "prato-4-catharina-sour-com-maracuja-e-goiaba.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389286_1676209687.webp?v=748188503",
+      "uso": "Cardapio.dc.html — item \"4. Catharina Sour com Maracujá e Goiaba\" (Nas Torneiras / On Tap)"
+    },
+    "prato-5-double-new-england-ipa.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389287_1640394140.webp?v=1975508776",
+      "uso": "Cardapio.dc.html — item \"5. Double New England IPA\" (Nas Torneiras / On Tap)"
+    },
+    "prato-6-festbier.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389288_1900249260.webp?v=2043676428",
+      "uso": "Cardapio.dc.html — item \"6. Festbier\" (Nas Torneiras / On Tap)"
+    },
+    "prato-7-ipa.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389289_125390958.webp?v=602971615",
+      "uso": "Cardapio.dc.html — item \"7. IPA\" (Nas Torneiras / On Tap)"
+    },
+    "prato-8-lambic-com-cereja.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389290_818416225.webp?v=375044355",
+      "uso": "Cardapio.dc.html — item \"8. Lambic com Cereja\" (Nas Torneiras / On Tap)"
+    },
+    "prato-9-imperial-stout-com-doce-de-leite-macadamia-e-amendoas.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389291_1464573838.webp?v=2083434598",
+      "uso": "Cardapio.dc.html — item \"9. Imperial Stout com Doce de leite, macadâmia e amêndoas\" (Nas Torneiras / On Tap)"
+    },
+    "prato-agua-com-gas.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389421_2042802875.webp?v=177999919",
+      "uso": "Cardapio.dc.html — item \"Agua com gás\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-agua-sem-gas.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389419_486510795.webp?v=1212940128",
+      "uso": "Cardapio.dc.html — item \"Agua sem gás\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-alma-galiza-zoe-sauvignon-blanc-750ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_544258_724271703.webp?v=307785119",
+      "uso": "Cardapio.dc.html — item \"Alma Galiza Zoe Sauvignon Blanc 750ml\" (Vinhos)"
+    },
+    "prato-alma-galiza-zoe-syrah-gran-reserva-750ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_564108_111227310.webp?v=2074503255",
+      "uso": "Cardapio.dc.html — item \"Alma Galiza Zoe Syrah Gran Reserva 750ml\" (Vinhos)"
+    },
+    "prato-ancho-especial.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387126.webp?v=572924589",
+      "uso": "Cardapio.dc.html — item \"Ancho Especial\" (Porções)"
+    },
+    "prato-batata-brava-chips.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387130.webp?v=1458254350",
+      "uso": "Cardapio.dc.html — item \"Batata Brava Chips\" (Porções)"
+    },
+    "prato-batata-brava-rustica.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_357752.webp?v=1872203178",
+      "uso": "Cardapio.dc.html — item \"Batata Brava Rústica\" (Porções)"
+    },
+    "prato-bife-ancho.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388725.webp?v=350619564",
+      "uso": "Cardapio.dc.html — item \"Bife Ancho\" (Carnes Nobres)"
+    },
+    "prato-bife-de-chorizo.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388724.webp?v=1508462286",
+      "uso": "Cardapio.dc.html — item \"Bife de Chorizo\" (Carnes Nobres)"
+    },
+    "prato-bittersweet-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387122.webp?v=1608707033",
+      "uso": "Cardapio.dc.html — item \"BitterSweet Burguer\" (Burguers)"
+    },
+    "prato-bolinho-de-carne-seca.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387119.webp?v=132930812",
+      "uso": "Cardapio.dc.html — item \"Bolinho de Carne Seca\" (Porções)"
+    },
+    "prato-calabresa-com-provolone.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387127.webp?v=472593382",
+      "uso": "Cardapio.dc.html — item \"Calabresa com Provolone\" (Porções)"
+    },
+    "prato-cervejas-em-latas-e-garrafas.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389299.webp?v=432799482",
+      "uso": "Cardapio.dc.html — item \"Cervejas em Latas e Garrafas\" (Cervejas Latas e Garrafas)"
+    },
+    "prato-cheesecake-rouges.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_472927.webp?v=1681083561",
+      "uso": "Cardapio.dc.html — item \"Cheesecake Rouges\" (Sobremesas)"
+    },
+    "prato-classic-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_356661.webp?v=1398336668",
+      "uso": "Cardapio.dc.html — item \"Classic Burguer\" (Burguers)"
+    },
+    "prato-coca-cola-ks-290ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389412.webp?v=1459363856",
+      "uso": "Cardapio.dc.html — item \"Coca Cola Ks 290ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-coca-cola-zero-ks-290ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389414.webp?v=1971369602",
+      "uso": "Cardapio.dc.html — item \"Coca Cola Zero Ks 290ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-czech-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_472924.webp?v=2010147232",
+      "uso": "Cardapio.dc.html — item \"Czech Burguer\" (Burguers)"
+    },
+    "prato-dry-aged-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_356677.webp?v=2093357504",
+      "uso": "Cardapio.dc.html — item \"Dry Aged Burguer\" (Burguers)"
+    },
+    "prato-duck-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_356678.webp?v=1477414684",
+      "uso": "Cardapio.dc.html — item \"Duck Burguer\" (Burguers)"
+    },
+    "prato-flat-iron-steak.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388727.webp?v=1101304055",
+      "uso": "Cardapio.dc.html — item \"Flat Iron Steak\" (Carnes Nobres)"
+    },
+    "prato-franguinho-do-divino.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387957.webp?v=1235102727",
+      "uso": "Cardapio.dc.html — item \"Franguinho do Divino\" (Porções)"
+    },
+    "prato-fray-leon-cabernet-sauvignon-375ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_543343_183919451.webp?v=1908015710",
+      "uso": "Cardapio.dc.html — item \"Fray Leon Cabernet Sauvignon 375ml\" (Vinhos)"
+    },
+    "prato-guarana-lata-350ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389410.webp?v=637733928",
+      "uso": "Cardapio.dc.html — item \"Guaraná Lata 350ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-guarana-zero-lata-350ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389411.webp?v=172498868",
+      "uso": "Cardapio.dc.html — item \"Guaraná Zero Lata 350ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-hamburguer-vegetariano.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389409.webp?v=1194910533",
+      "uso": "Cardapio.dc.html — item \"Hamburguer Vegetariano\" (Burguers)"
+    },
+    "prato-houblon-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_356673.webp?v=503389275",
+      "uso": "Cardapio.dc.html — item \"Houblon Burguer\" (Burguers)"
+    },
+    "prato-linguica-mettwurst.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387965.webp?v=444314543",
+      "uso": "Cardapio.dc.html — item \"Linguiça Mettwurst\" (Porções)"
+    },
+    "prato-mil-raices-cabernet-sauvignon-187ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_564110_1835315037.webp?v=2085333776",
+      "uso": "Cardapio.dc.html — item \"Mil Raices Cabernet Sauvignon 187ml\" (Vinhos)"
+    },
+    "prato-mini-kafta-de-cordeiro.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387959.webp?v=830400410",
+      "uso": "Cardapio.dc.html — item \"Mini Kafta de Cordeiro\" (Porções)"
+    },
+    "prato-morde-essa-la-maison.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_583397_1702176784.webp?v=1017125300",
+      "uso": "Cardapio.dc.html — item \"Morde Essa La Maison\" (Burguers)"
+    },
+    "prato-ola-po-cabernet-sauvignon-750ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_583399_650899508.webp?v=1398158060",
+      "uso": "Cardapio.dc.html — item \"Ola Po Cabernet Sauvignon 750ml\" (Vinhos)"
+    },
+    "prato-ola-po-chardonnay-750ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_583400_836839184.webp?v=2057684823",
+      "uso": "Cardapio.dc.html — item \"Ola Po Chardonnay 750ml\" (Vinhos)"
+    },
+    "prato-ola-po-merlot-750ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_544256_2122133062.webp?v=630278623",
+      "uso": "Cardapio.dc.html — item \"Ola Po Merlot 750ml\" (Vinhos)"
+    },
+    "prato-perez-cruz-gran-reserva-cabernet-sauvignon-750ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_544259_171003711.webp?v=1133143242",
+      "uso": "Cardapio.dc.html — item \"Perez Cruz Gran Reserva Cabernet Sauvignon 750ml\" (Vinhos)"
+    },
+    "prato-petit-gateau.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388693.webp?v=1191489083",
+      "uso": "Cardapio.dc.html — item \"Petit Gateau\" (Sobremesas)"
+    },
+    "prato-philosophia-cabernet-franc-750ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_543342_692477768.webp?v=717851094",
+      "uso": "Cardapio.dc.html — item \"Philosophia Cabernet Franc 750ml\" (Vinhos)"
+    },
+    "prato-picanha.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388730.webp?v=1675439657",
+      "uso": "Cardapio.dc.html — item \"Picanha\" (Carnes Nobres)"
+    },
+    "prato-porterhouse.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388729.webp?v=1695245402",
+      "uso": "Cardapio.dc.html — item \"Porterhouse\" (Carnes Nobres)"
+    },
+    "prato-quadrucci-a-la-biere.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_472919.webp?v=410493951",
+      "uso": "Cardapio.dc.html — item \"Quadrucci à La Bière\" (Pratos)"
+    },
+    "prato-quadrucci-blonde.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_472920.webp?v=1510525812",
+      "uso": "Cardapio.dc.html — item \"Quadrucci Blonde\" (Pratos)"
+    },
+    "prato-queijo-comte.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_391298.webp?v=765023673",
+      "uso": "Cardapio.dc.html — item \"Queijo Comté\" (Porções)"
+    },
+    "prato-queijo-gorgonzola.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387968.webp?v=142062659",
+      "uso": "Cardapio.dc.html — item \"Queijo Gorgonzola\" (Porções)"
+    },
+    "prato-queijo-parmesao.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_391300.webp?v=1314562318",
+      "uso": "Cardapio.dc.html — item \"Queijo Parmesão\" (Porções)"
+    },
+    "prato-risoto-belga.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387972.webp?v=1825056730",
+      "uso": "Cardapio.dc.html — item \"Risoto Belga\" (Pratos)"
+    },
+    "prato-risoto-la-maison.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_386887.webp?v=1194172917",
+      "uso": "Cardapio.dc.html — item \"Risoto La Maison\" (Pratos)"
+    },
+    "prato-russian-imperial-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_356674.webp?v=277571995",
+      "uso": "Cardapio.dc.html — item \"Russian Imperial Burguer\" (Burguers)"
+    },
+    "prato-salada-la-maison.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388699.webp?v=1037484702",
+      "uso": "Cardapio.dc.html — item \"Salada La Maison\" (Saladas)"
+    },
+    "prato-salsicha-alema-temperada.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387960.webp?v=55174100",
+      "uso": "Cardapio.dc.html — item \"Salsicha Alemã Temperada\" (Porções)"
+    },
+    "prato-schlenkerla-bourbon-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_472922.webp?v=155155772",
+      "uso": "Cardapio.dc.html — item \"Schlenkerla Bourbon Burguer\" (Burguers)"
+    },
+    "prato-short-rib.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_388726.webp?v=1164118977",
+      "uso": "Cardapio.dc.html — item \"Short Rib\" (Carnes Nobres)"
+    },
+    "prato-smash-burguer.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_356662.webp?v=594838503",
+      "uso": "Cardapio.dc.html — item \"Smash Burguer\" (Burguers)"
+    },
+    "prato-sprite-lata-350ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389416_405686602.webp?v=972988576",
+      "uso": "Cardapio.dc.html — item \"Sprite Lata 350ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-sprite-zero-lata-350ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_583411_1319325863.webp?v=1361977979",
+      "uso": "Cardapio.dc.html — item \"Sprite Zero Lata 350ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-suco-de-laranja-integral-300ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389418.webp?v=617615174",
+      "uso": "Cardapio.dc.html — item \"Suco de Laranja Integral 300ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-suco-de-uva-integral-290ml.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_389417.webp?v=1530207699",
+      "uso": "Cardapio.dc.html — item \"Suco de Uva Integral 290ml\" (Bebidas Não Alcoólicas)"
+    },
+    "prato-tabua-mista.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_387963.webp?v=2074105037",
+      "uso": "Cardapio.dc.html — item \"Tabua Mista\" (Porções)"
+    },
+    "prato-un-scheile-porc.jpg": {
+      "origem": "DGuests (API getUsoCardapio/lamaisondelabiere)",
+      "url_original": "https://www.dg-media.com.br/cardapio/produto_356679.webp?v=2089094817",
+      "uso": "Cardapio.dc.html — item \"Un Scheile Porc\" (Burguers)"
+    },
+    "quiosque.jpg": {
+      "origem": "site oficial lamaisondelabiere.com.br (/unidades)",
+      "uso": "La Maison - Proposta v5.dc.html — Sobre a casa (lm5-ab-3, quiosque)"
+    },
+    "salao-interno.jpg": {
+      "origem": "site oficial lamaisondelabiere.com.br (/)",
+      "uso": "La Maison - Proposta v5.dc.html — Sobre a casa (lm5-ab-4, salão)"
+    },
+    "unidade-bar-centro.jpg": {
+      "origem": "site oficial lamaisondelabiere.com.br (/unidades)",
+      "uso": "La Maison - Proposta v5.dc.html — Unidades (lm5-un-1) e Sobre a casa (lm5-ab-1, reaproveitada como fachada)"
+    },
+    "unidade-cantina-tia-lina.jpg": {
+      "origem": "site oficial lamaisondelabiere.com.br (/unidades, rotulada \"Vila Don Patto\" no site — confirmar nome com o cliente)",
+      "uso": "La Maison - Proposta v5.dc.html — Unidades (lm5-un-2)"
+    },
+    "unidade-xv-de-novembro.jpg": {
+      "origem": "site oficial lamaisondelabiere.com.br (/unidades)",
+      "uso": "La Maison - Proposta v5.dc.html — Unidades (lm5-un-3)"
+    }
+  }
+}

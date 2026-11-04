@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#232321;color:#e9e6df;-webkit-font-smoothing:antialiased;height:auto !important;overflow:visible !important}
+html{overflow-x:clip !important}
+*{box-sizing:border-box}
+a{color:#e9c98f;text-decoration:none}
+a:hover{color:#ffffff}
+::selection{background:#e9c98f;color:#232321}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:relative;background:#232321;color:#e9e6df;font-family:'Jost',sans-serif;font-weight:300">
+
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <filter id="lm5-chalk" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="1.3" numOctaves="2" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"></feDisplacementMap></filter>
+    </defs>
+  </svg>
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 5vw;mix-blend-mode:difference;color:#ffffff">
+    <a href="#casa" style="font-family:'Covered By Your Grace',cursive;font-size:26px;color:#ffffff">La Maison de La Bière</a>
+    <div style="display:flex;align-items:center;gap:30px;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase">
+      <a href="#sobre" style="color:#ffffff">A casa</a>
+      <a href="#carta" style="color:#ffffff">A carta</a>
+      <a href="#unidades" style="color:#ffffff">Unidades</a>
+      <a href="#eventos" style="color:#ffffff">Eventos</a>
+      <a href="#visite" style="color:#ffffff">Visite</a>
+      <a href="Cardapio.dc.html" style="color:#ffffff">Cardápio online</a>
+    </div>
+  </nav>
+
+  <!-- 01 HERO / LOUSA -->
+  <header id="casa" data-g="hero" data-screen-label="01 Hero" style="position:relative;min-height:100vh;overflow:hidden;background-color:#252523;background-image:radial-gradient(55% 45% at 25% 35%,rgba(255,255,255,.06),rgba(255,255,255,0) 70%),radial-gradient(45% 40% at 85% 75%,rgba(255,255,255,.045),rgba(255,255,255,0) 70%),repeating-linear-gradient(-28deg,rgba(255,255,255,.012) 0 2px,rgba(0,0,0,0) 2px 90px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));align-items:center;gap:6vh 4vw;padding:120px 6vw 16vh">
+    <div style="position:absolute;inset:0;opacity:.16;pointer-events:none;mix-blend-mode:screen;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+    <div style="position:relative;z-index:2">
+      <svg viewBox="0 0 720 300" style="width:min(100%,720px);height:auto;overflow:visible;filter:url(#lm5-chalk)">
+        <g style="font-family:'Covered By Your Grace',cursive;fill:#ece9e2;stroke:#ece9e2;stroke-width:1.2;fill-opacity:0;stroke-dasharray:500;stroke-dashoffset:500">
+          <text data-chalk="" x="0" y="120" style="font-size:150px">La Maison</text>
+          <text data-chalk="" x="40" y="262" style="font-size:132px">de La Bière</text>
+        </g>
+      </svg>
+      <div data-g="strip" data-torn="strip" style="display:inline-block;margin:3vh 0 0 -8px;padding:10px 26px 8px;background:#f4f1ea;color:#1d1b18;font-family:'Covered By Your Grace',cursive;font-size:clamp(22px,2.2vw,30px);transform:rotate(-2deg);transform-origin:0 50%">"A Casa da Cerveja" · Bar de Cervejas e Chopp especiais</div>
+      <p data-g="hero-fade" style="margin:4vh 0 0;max-width:420px;font-size:16px;line-height:1.7;color:#cfcbc2">Desde maio de 2014 no centro de São Roque. Terceira Temporada, terceira casa sede.</p>
+      <div data-g="hero-fade" style="display:flex;align-items:flex-start;gap:14px;margin-top:4vh">
+        <a href="#carta" style="padding:14px 26px;border:1.5px solid #ece9e2;border-radius:3px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#ece9e2" style-hover="background:#ece9e2;color:#252523">Ver a carta</a>
+        <svg viewBox="0 0 90 120" style="width:62px;height:auto;margin-top:18px;overflow:visible;filter:url(#lm5-chalk)"><path data-arrow="" d="M6 8 C 40 0, 64 22, 48 44 C 34 62, 18 46, 34 36 C 56 24, 70 60, 62 108" fill="none" stroke="#ece9e2" stroke-width="2" stroke-linecap="round"></path><path data-arrow="" d="M50 96 L62 110 L72 94" fill="none" stroke="#ece9e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:center;padding:6vh 0">
+      <div data-g="hero-photo" style="position:relative;width:min(100%,520px);background:#f4f1ea;padding:12px 12px 52px;box-shadow:0 30px 60px rgba(0,0,0,.5);transform:rotate(3deg)">
+        <div style="position:relative;aspect-ratio:4/3;background:url(./assets/og.jpg) 50% 60%/cover no-repeat"></div>
+        <div style="position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:'Covered By Your Grace',cursive;font-size:24px;color:#1d1b18">nossas torneiras</div>
+        <div style="position:absolute;top:-14px;left:-18px;width:96px;height:30px;background:rgba(232,224,204,.75);transform:rotate(-32deg)"></div>
+        <div style="position:absolute;top:-12px;right:-20px;width:96px;height:30px;background:rgba(232,224,204,.75);transform:rotate(30deg)"></div>
+      </div>
+      <div data-g="hero-fade" style="position:absolute;right:2%;top:-2%;display:flex;align-items:flex-end;gap:4px;font-family:'Covered By Your Grace',cursive;font-size:26px;color:#e9c98f;transform:rotate(-4deg)">
+        chopp tirado na hora
+        <svg viewBox="0 0 80 60" style="width:60px;height:auto;overflow:visible;filter:url(#lm5-chalk)"><path data-arrow="" d="M70 6 C 50 10, 30 22, 18 50" fill="none" stroke="#e9c98f" stroke-width="2" stroke-linecap="round"></path><path data-arrow="" d="M10 38 L18 52 L30 42" fill="none" stroke="#e9c98f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- 02 SOBRE (papel) -->
+  <section id="sobre" data-screen-label="02 A casa" style="position:relative;background:#f4f1ea;color:#1d1b18;padding:16vh 6vw 18vh">
+    <div data-torn="top" style="position:absolute;left:0;right:0;top:-28px;height:30px;background:#f4f1ea"></div>
+    <div style="text-align:center;margin-bottom:12vh">
+      <h2 style="margin:0;font-family:'Covered By Your Grace',cursive;font-weight:400;font-size:clamp(48px,6vw,92px);line-height:1">Sobre a casa</h2>
+      <svg viewBox="0 0 300 24" style="width:min(60vw,300px);height:auto;overflow:visible;margin-top:6px"><path data-draw="" d="M6 14 C 70 4, 150 22, 294 8" fill="none" stroke="#8a3a2a" stroke-width="2.4" stroke-linecap="round"></path></svg>
+    </div>
+    <div style="position:relative;max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:12vh">
+      <sc-for list="{{ about }}" as="a" hint-placeholder-count="4">
+        <div data-g="about" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4vw;align-items:center">
+          <div style="display:flex;align-items:center;gap:28px;grid-column:{{ a.col }};flex-direction:{{ a.dir }}">
+            <div style="flex-shrink:0;width:clamp(110px,12vw,160px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:1.5px solid #1d1b18;padding:6px;background:#f4f1ea"><div style="width:100%;height:100%;border-radius:50%;overflow:hidden"><image-slot id="{{ a.id }}" shape="circle" src="{{ a.src }}" placeholder="{{ a.photo }}"></image-slot></div></div>
+            <p style="margin:0;font-size:16px;line-height:1.7;max-width:360px;text-wrap:pretty">{{ a.pre }}<span data-g="hl" style="background-image:linear-gradient(#e2b979,#e2b979);background-repeat:no-repeat;background-position:0 88%;background-size:0% 38%;padding:0 2px;font-weight:400">{{ a.hl }}</span>{{ a.post }}</p>
+          </div>
+        </div>
+      </sc-for>
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible">
+        <path data-scroll-arrow="" d="M440 110 C 520 100, 560 160, 540 220" fill="none" stroke="#1d1b18" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+        <path data-scroll-arrow="" d="M560 380 C 470 380, 520 440, 470 470 C 430 490, 440 520, 470 520" fill="none" stroke="#1d1b18" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+        <path data-scroll-arrow="" d="M440 640 C 520 640, 560 700, 545 760" fill="none" stroke="#1d1b18" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+      </svg>
+    </div>
+    <div data-torn="bottom" style="position:absolute;left:0;right:0;bottom:-28px;height:30px;background:#f4f1ea;z-index:2"></div>
+  </section>
+
+  <!-- 03 A CARTA (lousa sticky) -->
+  <section id="carta" data-g="carta-wrap" data-screen-label="03 A carta" style="position:relative;height:560vh;background-color:#252523">
+    <div style="position:sticky;top:0;height:100vh;overflow:hidden;background-color:#252523;background-image:radial-gradient(50% 45% at 70% 40%,rgba(255,255,255,.06),rgba(255,255,255,0) 70%),radial-gradient(40% 40% at 15% 80%,rgba(255,255,255,.04),rgba(255,255,255,0) 70%);display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:4vw;align-items:center;padding:90px 6vw 50px">
+      <div style="position:absolute;inset:0;opacity:.16;pointer-events:none;mix-blend-mode:screen;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+      <div style="position:relative;z-index:2">
+        <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(44px,4.6vw,72px);line-height:1;filter:url(#lm5-chalk)">A Carta</div>
+        <div style="margin:10px 0 4vh;font-size:13px;line-height:1.6;color:#b5b1a8;max-width:260px">O cardápio de comida está disponível somente na unidade do Centro.</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ menu }}" as="m" hint-placeholder-count="7">
+            <div data-g="mitem" style="display:flex;align-items:center;gap:12px;padding:7px 0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8f8b83">
+              <span data-g="mtick" style="width:18px;height:2px;background:#e9c98f;transform:scaleX(0);transform-origin:0 50%"></span>{{ m.name }}
+            </div>
+          </sc-for>
+        </div>
+        <a href="https://linktr.ee/lamaisondelabiere" target="_blank" style="display:inline-block;margin-top:4vh;padding:12px 22px;border:1.5px solid #e9c98f;border-radius:3px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f" style-hover="background:#e9c98f;color:#252523">Delivery</a>
+      </div>
+      <div style="position:relative;z-index:2;height:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:3vw">
+        <div style="position:relative;min-height:220px">
+          <svg viewBox="0 0 700 260" style="position:absolute;left:0;top:50%;width:100%;height:auto;transform:translateY(-50%);overflow:visible;filter:url(#lm5-chalk)">
+            <sc-for list="{{ menu }}" as="m" hint-placeholder-count="0">
+              <text data-ctext="" x="0" y="150" style="font-family:'Covered By Your Grace',cursive;font-size:{{ m.fs }};fill:#ece9e2;stroke:#ece9e2;stroke-width:1.2;fill-opacity:0;stroke-dasharray:600;stroke-dashoffset:600">{{ m.name }}</text>
+            </sc-for>
+            <path data-g="cunder" d="M4 186 C 160 172, 320 196, 520 180" fill="none" stroke="#e9c98f" stroke-width="3" stroke-linecap="round" style="stroke-dasharray:560;stroke-dashoffset:560"></path>
+          </svg>
+          <div data-g="sponge" style="position:absolute;top:10%;bottom:10%;left:-20%;width:30%;background:radial-gradient(closest-side,rgba(236,233,226,.22),rgba(236,233,226,0));filter:blur(14px);opacity:0;pointer-events:none"></div>
+        </div>
+        <div style="position:relative;height:min(62vh,520px)">
+          <sc-for list="{{ menu }}" as="m" hint-placeholder-count="1">
+            <div data-g="polaroid" style="position:absolute;left:50%;top:50%;width:min(100%,340px,calc((100vh - 220px) * .78));margin-left:calc(min(100%,340px,calc((100vh - 220px) * .78)) / -2);transform:translateY(-50%);background:#f4f1ea;padding:10px 10px 46px;box-shadow:0 24px 50px rgba(0,0,0,.5);opacity:0">
+              <div style="position:relative;aspect-ratio:4/4.4"><image-slot id="{{ m.id }}" shape="rect" src="{{ m.src }}" placeholder="{{ m.photo }}"></image-slot></div>
+              <div style="position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:'Covered By Your Grace',cursive;font-size:22px;color:#1d1b18">{{ m.name }}</div>
+              <div style="position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(232,224,204,.78);transform:rotate(-4deg)"></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 UNIDADES (papel) -->
+  <section id="unidades" data-screen-label="04 Unidades" style="position:relative;background:#f4f1ea;color:#1d1b18;padding:18vh 6vw 20vh">
+    <div data-torn="top" style="position:absolute;left:0;right:0;top:-28px;height:30px;background:#f4f1ea"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:4vh 6vw;align-items:end;max-width:1200px;margin:0 auto 12vh">
+      <div>
+        <h2 style="margin:0;font-family:'Covered By Your Grace',cursive;font-weight:400;font-size:clamp(48px,6vw,92px);line-height:1">Unidades</h2>
+        <svg viewBox="0 0 300 24" style="width:min(60vw,260px);height:auto;overflow:visible;margin-top:4px"><path data-draw="" d="M6 14 C 70 4, 150 22, 294 8" fill="none" stroke="#8a3a2a" stroke-width="2.4" stroke-linecap="round"></path></svg>
+      </div>
+      <p style="margin:0;font-size:16px;line-height:1.7;max-width:440px;text-wrap:pretty">Temos também nossas unidades em formatos de Quiosques e Beer Container, pois assim levamos nosso Chopp e Cerveja para vários lugares.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:8vh 4vw;max-width:1200px;margin:0 auto">
+      <sc-for list="{{ units }}" as="u" hint-placeholder-count="3">
+        <article data-g="unit" style="position:relative;background:#ffffff;padding:12px 12px 22px;box-shadow:0 18px 40px rgba(29,27,24,.18);margin-top:{{ u.mt }}" data-rot="{{ u.rot }}">
+          <div style="position:absolute;top:-12px;left:50%;width:92px;height:26px;margin-left:-46px;background:rgba(214,203,178,.7);transform:rotate(3deg);z-index:2"></div>
+          <div style="position:relative;aspect-ratio:1"><image-slot id="{{ u.id }}" shape="rect" src="{{ u.src }}" placeholder="{{ u.photo }}"></image-slot></div>
+          <div style="padding:16px 6px 0">
+            <div style="font-family:'Covered By Your Grace',cursive;font-size:32px;line-height:1">{{ u.name }}</div>
+            <div style="margin-top:8px;font-size:13px;line-height:1.6;color:#5b564e">{{ u.addr }}</div>
+            <a href="{{ u.map }}" target="_blank" style="display:inline-block;margin-top:12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#8a3a2a;border-bottom:1px solid currentColor;padding-bottom:2px">Como chegar →</a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 04b EVENTOS (lousa) -->
+  <section id="eventos" data-screen-label="04b Eventos" style="position:relative;background-color:#252523;background-image:radial-gradient(50% 45% at 30% 40%,rgba(255,255,255,.06),rgba(255,255,255,0) 70%);padding:20vh 6vw 22vh;overflow:hidden">
+    <div data-torn="top" style="position:absolute;left:0;right:0;top:0;height:30px;background:#f4f1ea;transform:scaleY(-1)"></div>
+    <div style="position:absolute;inset:0;opacity:.16;pointer-events:none;mix-blend-mode:screen;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+    <div style="position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 6vw;max-width:1200px;margin:0 auto 10vh">
+      <div>
+        <h2 style="margin:0;font-family:'Covered By Your Grace',cursive;font-weight:400;font-size:clamp(52px,6.4vw,100px);line-height:1;filter:url(#lm5-chalk)">Eventos</h2>
+        <svg viewBox="0 0 300 24" style="width:min(60vw,240px);height:auto;overflow:visible;margin-top:4px"><path data-draw="" d="M6 14 C 70 4, 150 22, 294 8" fill="none" stroke="#e9c98f" stroke-width="2.4" stroke-linecap="round"></path></svg>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:15px;line-height:1.7;color:#b5b1a8">Aniversários da casa, corridas e noites especiais. Clique numa foto para ver o álbum da edição.</p>
+    </div>
+    <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:8vh 4vw;max-width:1200px;margin:0 auto">
+      <sc-for list="{{ events }}" as="e" hint-placeholder-count="3">
+        <div data-g="event" data-rot="{{ e.rot }}" onClick="{{ e.open }}" style="position:relative;display:block;cursor:pointer;background:#f4f1ea;color:#1d1b18;padding:12px 12px 20px;box-shadow:0 24px 50px rgba(0,0,0,.5);margin-top:{{ e.mt }}" style-hover="color:#8a3a2a">
+          <div style="position:absolute;top:-12px;left:50%;width:92px;height:26px;margin-left:-46px;background:rgba(232,224,204,.78);transform:rotate(-3deg);z-index:2"></div>
+          <div style="position:relative;aspect-ratio:4/3.4"><image-slot id="{{ e.id }}" shape="rect" src="{{ e.src }}" placeholder="{{ e.photo }}"></image-slot></div>
+          <div style="padding:16px 6px 0">
+            <div style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#8a3a2a">{{ e.tag }}</div>
+            <div style="margin-top:6px;font-family:'Covered By Your Grace',cursive;font-size:32px;line-height:1">{{ e.name }}</div>
+            <div style="margin-top:12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid currentColor;display:inline-block;padding-bottom:2px">Ver fotos →</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 05 RASGO + VISITE -->
+  <section id="visite" data-g="rip-wrap" data-screen-label="05 Visite" style="position:relative;height:300vh;background:#252523">
+    <div style="position:sticky;top:0;height:100vh;overflow:hidden">
+      <div style="position:absolute;inset:0;background-color:#252523;background-image:radial-gradient(55% 45% at 50% 40%,rgba(255,255,255,.07),rgba(255,255,255,0) 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 6vw 40px">
+        <div style="position:absolute;inset:0;opacity:.16;pointer-events:none;mix-blend-mode:screen;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+        <h2 data-g="v-in" style="position:relative;margin:0;font-family:'Covered By Your Grace',cursive;font-weight:400;font-size:clamp(56px,8vw,130px);line-height:1;filter:url(#lm5-chalk)">Venha nos visitar</h2>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:5vh 5vw;width:min(100%,1100px);margin-top:7vh;text-align:left">
+          <div data-g="v-in">
+            <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f;margin-bottom:12px">Horário de atendimento</div>
+            <div style="font-family:'Covered By Your Grace',cursive;font-size:26px;line-height:1.35">Ter a Sex - 17h às 23h<br>Sáb - 14h às 23h<br>Dom - 12h às 18h<br>Seg - Fechado</div>
+            <div style="margin-top:6px;font-size:13px;color:#b5b1a8">* Feriados consultar horários</div>
+          </div>
+          <div data-g="v-in">
+            <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f;margin-bottom:12px">Endereço</div>
+            <div style="font-family:'Covered By Your Grace',cursive;font-size:28px;line-height:1.25">Av. Antonino Dias Bastos 1065, Centro<br>São Roque 18130-000, BR</div>
+          </div>
+          <div data-g="v-in">
+            <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f;margin-bottom:12px">Contato</div>
+            <div style="display:flex;flex-direction:column;gap:2px;font-family:'Covered By Your Grace',cursive;font-size:28px;line-height:1.25">
+              <a href="tel:+551147123733" style="color:#ece9e2">(11) 4712-3733</a>
+              <a href="mailto:contato@lamaisondelabiere.com.br" style="color:#ece9e2;font-size:22px;word-break:break-all">contato@lamaisondelabiere.com.br</a>
+            </div>
+          </div>
+        </div>
+        <a data-g="v-in" href="https://linktr.ee/lamaisondelabiere" target="_blank" style="position:relative;margin-top:7vh;padding:14px 28px;border:1.5px solid #e9c98f;border-radius:3px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f" style-hover="background:#e9c98f;color:#252523">Delivery</a>
+        <div style="position:absolute;left:6vw;right:6vw;bottom:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8f8b83">
+          <span>© 2026 La Maison de La Bière</span><span>São Roque · SP</span>
+        </div>
+      </div>
+      <div data-g="rip-l" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:10px 0 30px rgba(0,0,0,.25);will-change:transform">
+        <div style="width:100vw;flex-shrink:0">
+          <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(64px,10vw,170px);line-height:.95">Vem pro<br>La Maison!</div>
+          <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e">Role para abrir</div>
+        </div>
+      </div>
+      <div data-g="rip-r" style="position:absolute;inset:0;background:#f4f1ea;color:#1d1b18;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:-10px 0 30px rgba(0,0,0,.25);will-change:transform">
+        <div style="width:100vw;flex-shrink:0">
+          <div style="font-family:'Covered By Your Grace',cursive;font-size:clamp(64px,10vw,170px);line-height:.95">Vem pro<br>La Maison!</div>
+          <div style="margin-top:4vh;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#5b564e">Role para abrir</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX de eventos -->
+  <div ref="{{ lbStageRef }}" style="display:{{ lbDisplay }};position:fixed;inset:0;z-index:300;align-items:center;justify-content:center;background:rgba(10,9,8,.92)" onClick="{{ lbClose }}">
+    <button onClick="{{ lbCloseBtn }}" aria-label="Fechar" style="position:absolute;top:22px;right:24px;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:18px;cursor:pointer">✕</button>
+    <sc-if value="{{ lbShowArrows }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ lbPrevBtn }}" aria-label="Anterior" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">‹</button>
+      <button onClick="{{ lbNextBtn }}" aria-label="Próxima" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(236,233,226,.5);background:transparent;color:#ece9e2;font-size:22px;cursor:pointer">›</button>
+    </sc-if>
+    <div onClick="{{ lbStop }}" ref="{{ lbImgRef }}" style="position:relative;width:min(88vw,900px);max-height:76vh;aspect-ratio:4/3;box-shadow:0 30px 70px rgba(0,0,0,.6)">
+      <image-slot id="lm5-lb-img" shape="rect" src="{{ lbPhoto }}" placeholder="Foto"></image-slot>
+    </div>
+    <div style="position:absolute;bottom:64px;left:0;right:0;text-align:center;color:#ece9e2;font-family:'Covered By Your Grace',cursive;font-size:24px">{{ lbCaption }}</div>
+    <a href="{{ lbAlbumHref }}" target="_blank" onClick="{{ lbStop }}" style="position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e9c98f">Ver álbum completo →</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;suave&quot;,&quot;direta&quot;],&quot;default&quot;:&quot;suave&quot;,&quot;tsType&quot;:&quot;'suave'|'direta'&quot;,&quot;section&quot;:&quot;Experiência&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  lbStageRef = React.createRef();
+  lbImgRef = React.createRef();
+  state = { lightbox: null };
+
+  componentDidMount() { this.wait(); this._onKey = (e) => this.onKey(e); window.addEventListener('keydown', this._onKey); }
+  componentWillUnmount() {
+    clearTimeout(this.t);
+    if (this.ctx) this.ctx.revert();
+    if (this.rz) { window.removeEventListener('load', this.rz); window.removeEventListener('resize', this.rz); }
+    if (this._onKey) window.removeEventListener('keydown', this._onKey);
+  }
+  componentDidUpdate(prev) {
+    if (prev.motion !== this.props.motion && this.ctx) this.boot();
+    const isOpen = !!this.state.lightbox;
+    const key = this.state.lightbox ? this.state.lightbox.evIdx + '-' + this.state.lightbox.i : null;
+    if (isOpen && !this._lbWasOpen && window.gsap && this.lbImgRef.current) {
+      window.gsap.fromTo(this.lbImgRef.current, { opacity: 0, y: 36, scale: .96 }, { opacity: 1, y: 0, scale: 1, duration: .45, ease: 'power3.out' });
+    } else if (isOpen && key !== this._lbKey && window.gsap && this.lbImgRef.current) {
+      const dir = this._lbDir || 1;
+      window.gsap.fromTo(this.lbImgRef.current, { opacity: 0, x: dir * 50 }, { opacity: 1, x: 0, duration: .32, ease: 'power2.out' });
+    }
+    this._lbWasOpen = isOpen;
+    this._lbKey = key;
+  }
+  onKey(e) {
+    if (!this.state.lightbox) return;
+    if (e.key === 'Escape') this.closeLb();
+    if (e.key === 'ArrowRight') this.stepLb(1);
+    if (e.key === 'ArrowLeft') this.stepLb(-1);
+  }
+  wait() {
+    if (window.gsap && window.ScrollTrigger && this.rootRef.current) this.t = setTimeout(() => this.boot(), 60);
+    else this.t = setTimeout(() => this.wait(), 60);
+  }
+  boot() {
+    if (this.ctx) this.ctx.revert();
+    try { this.init(); } catch (e) { console.error('[LaMaison v5]', e && e.stack || e); }
+  }
+  jag(n, lo, hi) {
+    const out = []; let s = 7;
+    const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+    for (let i = 0; i <= n; i++) out.push([(i / n) * 100, lo + rnd() * (hi - lo)]);
+    return out;
+  }
+  tear(root) {
+    root.querySelectorAll('[data-torn]').forEach(el => {
+      const k = el.getAttribute('data-torn');
+      if (k === 'top') el.style.clipPath = 'polygon(' + this.jag(60, 0, 70).map(([x, y]) => x + '% ' + y + '%').join(',') + ',100% 100%,0 100%)';
+      if (k === 'bottom') el.style.clipPath = 'polygon(0 0,100% 0,' + this.jag(60, 30, 100).reverse().map(([x, y]) => x + '% ' + y + '%').join(',') + ')';
+      if (k === 'strip') {
+        const top = this.jag(30, 0, 9).map(([x, y]) => x + '% ' + y + '%');
+        const bot = this.jag(30, 91, 100).reverse().map(([x, y]) => x + '% ' + y + '%');
+        el.style.clipPath = 'polygon(' + top.concat(bot).join(',') + ')';
+      }
+    });
+    // rip halves: shared jagged vertical seam
+    let s = 3; const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+    const seam = []; for (let i = 0; i <= 40; i++) seam.push([48 + rnd() * 4 + (i % 2 ? 1.2 : -1.2), (i / 40) * 100]);
+    const L = root.querySelector('[data-g=rip-l]'), R = root.querySelector('[data-g=rip-r]');
+    L.style.clipPath = 'polygon(0 0,' + seam.map(([x, y]) => x + '% ' + y + '%').join(',') + ',0 100%)';
+    R.style.clipPath = 'polygon(100% 0,' + seam.map(([x, y]) => x + '% ' + y + '%').join(',') + ',100% 100%)';
+  }
+  init() {
+    const g = window.gsap, ST = window.ScrollTrigger;
+    g.registerPlugin(ST);
+    const root = this.rootRef.current;
+    const q = s => root.querySelectorAll(s), q1 = s => root.querySelector(s);
+    const scrub = this.props.motion === 'direta' ? true : 1.2;
+    this.tear(root);
+
+    this.ctx = g.context(() => {
+      // hero
+      const tl = g.timeline({ delay: 0.25 });
+      q('[data-chalk]').forEach((el, i) => {
+        tl.to(el, { strokeDashoffset: 0, duration: 2, ease: 'power1.inOut' }, i * 0.9)
+          .to(el, { fillOpacity: 1, strokeOpacity: 0.2, duration: 0.9 }, i * 0.9 + 1.5);
+      });
+      tl.from(q1('[data-g=strip]'), { scaleX: 0, duration: 0.7, ease: 'power3.out' }, 2.4)
+        .from(q1('[data-g=hero-photo]'), { y: -80, rotation: 14, opacity: 0, duration: 1.1, ease: 'back.out(1.4)' }, 1.2)
+        .from(q('[data-g=hero-fade]'), { opacity: 0, y: 16, duration: 0.9, stagger: 0.15, ease: 'power3.out' }, 2.8);
+      const arrows = q('[data-arrow]');
+      arrows.forEach(p => { const l = p.getTotalLength(); g.set(p, { strokeDasharray: l, strokeDashoffset: l }); });
+      tl.to(arrows, { strokeDashoffset: 0, duration: 0.8, stagger: 0.25, ease: 'power2.inOut' }, 3.2);
+      g.to(q1('[data-g=hero-photo]'), { rotation: -2, y: 60, ease: 'none', scrollTrigger: { trigger: q1('[data-g=hero]'), start: 'top top', end: 'bottom top', scrub: true } });
+
+      // sobre
+      q('[data-draw]').forEach(p => {
+        const l = p.getTotalLength(); g.set(p, { strokeDasharray: l, strokeDashoffset: l });
+        g.to(p, { strokeDashoffset: 0, duration: 1.2, ease: 'power2.inOut', scrollTrigger: { trigger: p, start: 'top 85%' } });
+      });
+      q('[data-g=about]').forEach(el => {
+        g.from(el.firstElementChild, { opacity: 0, y: 50, rotation: el.firstElementChild.style.flexDirection === 'row-reverse' ? 2 : -2, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 82%' } });
+        g.to(el.querySelector('[data-g=hl]'), { backgroundSize: '100% 38%', duration: 1, ease: 'power2.inOut', delay: 0.5, scrollTrigger: { trigger: el, start: 'top 75%' } });
+      });
+      const sa = q('[data-scroll-arrow]');
+      sa.forEach(p => {
+        const l = p.getTotalLength(); g.set(p, { strokeDasharray: l, strokeDashoffset: l });
+        g.to(p, { strokeDashoffset: 0, ease: 'none', scrollTrigger: { trigger: p.closest('div'), start: () => 'top+=' + (p.getBBox().y / 1000 * p.closest('div').offsetHeight) + ' 75%', end: '+=260', scrub: true } });
+      });
+
+      // carta
+      const texts = q('[data-ctext]'), pols = q('[data-g=polaroid]'), ticks = q('[data-g=mtick]'), items = q('[data-g=mitem]');
+      const under = q1('[data-g=cunder]'), sponge = q1('[data-g=sponge]');
+      const ct = g.timeline({ scrollTrigger: { trigger: q1('[data-g=carta-wrap]'), start: 'top top', end: 'bottom bottom', scrub } });
+      const step = 1, N = texts.length;
+      texts.forEach((tx, i) => {
+        const t0 = i * step, rot = [-4, 3, -2, 5, -3, 2, -5][i % 7];
+        ct.to(tx, { strokeDashoffset: 0, duration: 0.35, ease: 'none' }, t0)
+          .to(tx, { fillOpacity: 1, strokeOpacity: 0.2, duration: 0.15 }, t0 + 0.28)
+          .fromTo(under, { strokeDashoffset: 560 }, { strokeDashoffset: 0, duration: 0.2, ease: 'none', immediateRender: false }, t0 + 0.3)
+          .fromTo(pols[i], { opacity: 0, y: -120, rotation: rot * 4, scale: 1.15 }, { opacity: 1, y: 0, rotation: rot, scale: 1, duration: 0.3, ease: 'back.out(1.6)', immediateRender: false }, t0 + 0.1)
+          .to(ticks[i], { scaleX: 1, duration: 0.1 }, t0)
+          .to(items[i], { color: '#ece9e2', x: 6, duration: 0.1 }, t0);
+        if (i < N - 1) {
+          const e0 = t0 + 0.72;
+          ct.fromTo(sponge, { left: '-30%', opacity: 0 }, { left: '90%', opacity: 1, duration: 0.2, ease: 'power1.inOut', immediateRender: false }, e0)
+            .to(sponge, { opacity: 0, duration: 0.05 }, e0 + 0.2)
+            .to(tx, { opacity: 0, filter: 'blur(6px)', duration: 0.16 }, e0 + 0.04)
+            .to(under, { opacity: 0, duration: 0.08 }, e0 + 0.04)
+            .set(under, { opacity: 1, strokeDashoffset: 560 }, e0 + 0.24)
+            .to(pols[i], { x: 160, y: 60, rotation: rot * 6, opacity: 0, duration: 0.22, ease: 'power2.in' }, e0)
+            .to(ticks[i], { scaleX: 0, duration: 0.08 }, e0 + 0.1)
+            .to(items[i], { color: '#8f8b83', x: 0, duration: 0.08 }, e0 + 0.1);
+        }
+      });
+      ct.to({}, { duration: 0.4 });
+
+      // unidades
+      q('[data-g=unit]').forEach((el, i) => {
+        const rot = parseFloat(el.getAttribute('data-rot')) || 0;
+        g.fromTo(el, { y: -90, rotation: rot + (i % 2 ? 10 : -10), opacity: 0 }, { y: 0, rotation: rot, opacity: 1, duration: 1.1, delay: i * 0.12, ease: 'back.out(1.5)', scrollTrigger: { trigger: el, start: 'top 85%' } });
+      });
+
+      q('[data-g=event]').forEach((el, i) => {
+        const rot = parseFloat(el.getAttribute('data-rot')) || 0;
+        g.fromTo(el, { y: -100, rotation: rot + (i % 2 ? -12 : 12), opacity: 0 }, { y: 0, rotation: rot, opacity: 1, duration: 1.1, delay: i * 0.12, ease: 'back.out(1.5)', scrollTrigger: { trigger: el, start: 'top 85%' } });
+      });
+
+      // rasgo
+      const L = q1('[data-g=rip-l]'), R = q1('[data-g=rip-r]');
+      g.timeline({ scrollTrigger: { trigger: q1('[data-g=rip-wrap]'), start: 'top top', end: 'bottom bottom', scrub } })
+        .to([L, R], { keyframes: [{ x: -4, rotation: -0.4 }, { x: 4, rotation: 0.4 }, { x: -3, rotation: -0.3 }, { x: 0, rotation: 0 }], duration: 0.16 }, 0.02)
+        .to(L, { x: '-62vw', y: '10vh', rotation: -9, duration: 0.5, ease: 'power2.in' }, 0.2)
+        .to(R, { x: '62vw', y: '14vh', rotation: 11, duration: 0.5, ease: 'power2.in' }, 0.2)
+        .from(q('[data-g=v-in]'), { opacity: 0, y: 30, duration: 0.2, stagger: 0.05 }, 0.45)
+        .to({}, { duration: 0.2 });
+    }, root);
+
+    ST.refresh();
+    if (!this.rz) { this.rz = () => ST.refresh(); window.addEventListener('load', this.rz); window.addEventListener('resize', this.rz); }
+    setTimeout(() => ST.refresh(), 700);
+    if (document.fonts) document.fonts.ready.then(() => ST.refresh());
+  }
+
+  openLb(evIdx) { this._lbDir = 1; this.setState({ lightbox: { evIdx, i: 0 } }); }
+  closeLb() {
+    if (window.gsap && this.lbImgRef.current) {
+      window.gsap.to(this.lbImgRef.current, { opacity: 0, y: 20, duration: .22, ease: 'power2.in', onComplete: () => this.setState({ lightbox: null }) });
+    } else this.setState({ lightbox: null });
+  }
+  stepLb(d) {
+    const lb = this.state.lightbox; if (!lb) return;
+    const ev = this.eventsData()[lb.evIdx]; if (!ev || !ev.photos.length) return;
+    this._lbDir = d;
+    const i = (lb.i + d + ev.photos.length) % ev.photos.length;
+    this.setState({ lightbox: { evIdx: lb.evIdx, i } });
+  }
+  eventsData() {
+    return [
+      { tag: '6ª edição', name: 'Beer Mile Brasil · São Roque', href: 'https://drive.google.com/drive/folders/19NOqYPm0ZfSVTRnxxJWgOeikvD9QGIRm', id: 'lm5-ev-1', src: './assets/linktree-thumb-beer-mile.jpg', photo: 'Foto: Beer Mile 6ª edição', rot: '-2', mt: '0px',
+        photos: ['./assets/evento-beer-mile-01.jpg', './assets/evento-beer-mile-02.jpg', './assets/evento-beer-mile-03.jpg', './assets/evento-beer-mile-04.jpg', './assets/evento-beer-mile-05.jpg', './assets/evento-beer-mile-06.jpg', './assets/evento-beer-mile-07.jpg', './assets/evento-beer-mile-08.jpg'] },
+      { tag: 'Aniversário', name: '11 Ans · Onze anos', href: 'https://drive.google.com/drive/folders/1FM7zCXZbzCyL_WjO5Zmqbpqjs2N-2Fq2?usp=sharing', id: 'lm5-ev-2', src: './assets/linktree-thumb-11-anos.jpg', photo: 'Foto: festa de 11 anos', rot: '1.5', mt: '6vh',
+        photos: ['./assets/evento-11-anos-01.jpg', './assets/evento-11-anos-02.jpg', './assets/evento-11-anos-03.jpg', './assets/evento-11-anos-04.jpg', './assets/evento-11-anos-05.jpg', './assets/evento-11-anos-06.jpg', './assets/evento-11-anos-07.jpg', './assets/evento-11-anos-08.jpg', './assets/evento-11-anos-09.jpg'] },
+      { tag: 'Aniversário', name: 'Dix Ans · 10 anos', href: 'https://drive.google.com/drive/folders/1RkzrRya9H_igvvzwoZI-WXZWcqmrLOSR', id: 'lm5-ev-3', src: './assets/linktree-thumb-dix-ans.jpg', photo: 'Foto: festa de 10 anos', rot: '-1', mt: '2vh',
+        photos: ['./assets/linktree-thumb-dix-ans.jpg'] }
+    ];
+  }
+  renderVals() {
+    const names = ['Burguers', 'Carnes Nobres', 'Porções', 'Pratos', 'Saladas', 'Sobremesas', 'Nas Torneiras'];
+    const photos = ['./assets/prato-houblon-burguer.jpg', './assets/prato-picanha.jpg', './assets/prato-tabua-mista.jpg', './assets/prato-risoto-la-maison.jpg', './assets/prato-salada-la-maison.jpg', './assets/prato-petit-gateau.jpg', './assets/prato-1-pilsen.jpg'];
+    const evs = this.eventsData();
+    const lb = this.state.lightbox;
+    const activeEv = lb ? evs[lb.evIdx] : null;
+    return {
+      rootRef: this.rootRef,
+      about: [
+        { pre: 'Inaugurado em maio de 2014, o La Maison de la Bière é um ', hl: 'Bar de Cervejas e Chopp especiais', post: '.', col: '1', dir: 'row', id: 'lm5-ab-1', photo: 'Foto: fachada', src: './assets/unidade-bar-centro.jpg' },
+        { pre: 'Um conceito único, onde procuramos proporcionar aos nossos amigos e clientes uma experiência sempre ', hl: 'agradável e descontraída', post: ' com a gente.', col: '2', dir: 'row-reverse', id: 'lm5-ab-2', photo: 'Foto: brinde', src: null },
+        { pre: 'Temos também nossas unidades em formatos de ', hl: 'Quiosques e Beer Container', post: ', pois assim levamos nosso Chopp e Cerveja para vários lugares.', col: '1', dir: 'row', id: 'lm5-ab-3', photo: 'Foto: quiosque', src: './assets/quiosque.jpg' },
+        { pre: 'Nosso Bar principal aqui no centro da cidade de São Roque chega a ', hl: 'Terceira Temporada', post: ', nossa terceira casa sede, e estamos com muitas novidades, espaço novos, e claro muita Cerveja, Chopp e Comida Boa.', col: '2', dir: 'row-reverse', id: 'lm5-ab-4', photo: 'Foto: salão', src: './assets/salao-interno.jpg' }
+      ],
+      menu: names.map((name, i) => ({ name, id: 'lm5-carta-' + (i + 1), photo: 'Foto: ' + name.toLowerCase(), src: photos[i], fs: name.length > 12 ? '96px' : '120px' })),
+      events: evs.map((e, i) => ({ ...e, open: () => this.openLb(i) })),
+      units: [
+        { name: 'Bar Centro', addr: 'Av. Antonino Dias Bastos 1065, Centro · São Roque', id: 'lm5-un-1', photo: 'Foto: casa sede', src: './assets/unidade-bar-centro.jpg', rot: '-2', mt: '0px', map: 'https://www.google.com.br/maps/dir//La+Maison+De+La+Bi%C3%A8re+-+Avenida+Ant%C3%B4nino+Dias+Bastos+-+Centro,+S%C3%A3o+Roque+-+SP/@-23.5262269,-47.1691954,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94cf12aaffffffff:0x37d4adfdcdb973a1!2m2!1d-47.1341757!2d-23.5263095' },
+        { name: 'Cantina Tia Lina', addr: 'Estr. do Vinho (Spv-077), 10400 · São Roque', id: 'lm5-un-2', photo: 'Foto: Cantina Tia Lina', src: './assets/unidade-cantina-tia-lina.jpg', rot: '1.5', mt: '6vh', map: 'https://www.google.com/maps/place/Cantina+Tia+Lina/@-23.6124258,-47.1585104,17z/data=!3m1!4b1!4m6!3m5!1s0x94cf7360124321f3:0x7d70f6586c927841!8m2!3d-23.6124258!4d-47.1559355!16s%2Fg%2F11b7h48130?entry=ttu' },
+        { name: 'XV de Novembro', addr: 'Vinícola XV de Novembro · Estr. do Vinho, Km 4,5', id: 'lm5-un-3', photo: 'Foto: XV de Novembro', src: './assets/unidade-xv-de-novembro.jpg', rot: '-1', mt: '2vh', map: 'https://www.google.com.br/maps/dir//Vin%C3%ADcola+XV+de+Novembro+-+Estr.+do+Vinho+(Spv-077),+Km+4,5+-+Sorocamirim,+S%C3%A3o+Roque+-+SP,+18145-100/@-23.5838052,-47.1417597,16z/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x94cf733698589565:0x1561d1db85bc9750!3e0' }
+      ],
+      lbStageRef: this.lbStageRef,
+      lbImgRef: this.lbImgRef,
+      lbDisplay: lb ? 'flex' : 'none',
+      lbPhoto: activeEv ? activeEv.photos[lb.i] : '',
+      lbCaption: activeEv ? activeEv.name + ' · ' + (lb.i + 1) + '/' + activeEv.photos.length : '',
+      lbAlbumHref: activeEv ? activeEv.href : '#',
+      lbShowArrows: activeEv ? activeEv.photos.length > 1 : false,
+      lbClose: () => this.closeLb(),
+      lbCloseBtn: (e) => { e.stopPropagation(); this.closeLb(); },
+      lbPrevBtn: (e) => { e.stopPropagation(); this.stepLb(-1); },
+      lbNextBtn: (e) => { e.stopPropagation(); this.stepLb(1); },
+      lbStop: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>
